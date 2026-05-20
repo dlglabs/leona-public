@@ -3,6 +3,7 @@
 Controlled public benchmark and transparency kit for autonomous code repair.
 
 Website: [www.dlglabs.org](https://www.dlglabs.org)
+Contact: [founder@dlglabs.org](mailto:founder@dlglabs.org)
 
 This repository is intentionally a public release surface, not the complete private product. It contains benchmark evidence, a public dashboard, telemetry schemas, a lightweight orchestration shell, a terminal viewer, the synthetic benchmark framework, and a clearly separated true-LLM repair validation snapshot.
 
@@ -122,6 +123,12 @@ GitHub Pages custom domain:
 
 ```text
 www.dlglabs.org
+```
+
+Public contact:
+
+```text
+founder@dlglabs.org
 ```
 
 ## Evidence Integrity Note

@@ -6,6 +6,8 @@ LEONA by DLG Labs completed a controlled 1,000-case deterministic mutation-repla
 
 LEONA has also added a separate true LLM repair pipeline. That pipeline removes known-answer replay from the repair step, sends pytest telemetry and authorized source context to a model, validates the proposed patch, applies it through the frozen execution chokepoint, reruns pytest, and preserves failures honestly. A 50-case validation run currently shows **15/50 passing true LLM repairs** and **35/50 MODEL_LIMITATION** classifications.
 
+Public contact: [founder@dlglabs.org](mailto:founder@dlglabs.org)
+
 ## Operator Disclosure
 
 Codex was used as a development/operator assistant to launch commands, inspect outputs, and guide repository maintenance. LEONA performed the governed repair benchmark execution through its own repair pipeline, validation layer, rollback system, mutation constraints, and telemetry generation.

@@ -2,6 +2,8 @@
 
 LEONA by DLG Labs is being released in controlled layers. This repository is the public transparency layer.
 
+Public contact: [founder@dlglabs.org](mailto:founder@dlglabs.org)
+
 ## Operator Disclosure
 
 Codex was used as a development/operator assistant to launch commands, inspect outputs, and guide repository maintenance. LEONA performed the governed repair benchmark execution through its own repair pipeline, validation layer, rollback system, mutation constraints, and telemetry generation.
