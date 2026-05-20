@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LEONA by DLG Labs</title>
+  <meta name="description" content="Public benchmark transparency kit for LEONA by DLG Labs.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0f16;
+      --surface: #111923;
+      --surface-2: #151f2b;
+      --line: #263544;
+      --text: #edf5ff;
+      --muted: #9fb0c3;
+      --accent: #46b9ff;
+      --accent-2: #67e8a4;
+      --warn: #ffc45e;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    a { color: inherit; }
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(10, 15, 22, .84);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.06); color: var(--text); }
+
+    .hero {
+      min-height: 82vh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(10,15,22,.94) 0%, rgba(10,15,22,.78) 38%, rgba(10,15,22,.28) 100%),
+        url("assets/screenshots/dashboard-overview.png") center / cover no-repeat,
+        #0d131c;
+    }
+    .hero-inner {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 116px 20px 80px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-2);
+      border: 1px solid rgba(103, 232, 164, .32);
+      background: rgba(103, 232, 164, .09);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: .88rem;
+      margin-bottom: 18px;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: .92;
+      letter-spacing: 0;
+    }
+    .hero p {
+      max-width: 670px;
+      color: #c7d5e5;
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      margin: 24px 0 30px;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 7px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .button.primary {
+      border-color: rgba(70, 185, 255, .8);
+      background: #1387d4;
+    }
+
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 74px 20px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.05;
+      margin: 0;
+    }
+    .section-head p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 124px;
+    }
+    .metric strong {
+      display: block;
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      line-height: 1;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .metric span { color: var(--muted); }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .proof-image {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0f1620;
+      min-height: 320px;
+    }
+    .proof-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .proof-list {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 20px;
+    }
+    .proof-list h3 { margin: 0 0 12px; font-size: 1.12rem; }
+    .proof-list ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .proof-list li { margin: 10px 0; }
+    .boundary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 20px;
+    }
+    .panel h3 { margin: 0 0 12px; }
+    .panel p { margin: 0; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+      .nav-links { flex-wrap: wrap; }
+      .hero-inner { padding-top: 142px; }
+      .metrics, .proof-grid, .boundary { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <div class="brand">LEONA by DLG Labs</div>
+      <div class="nav-links">
+        <a href="#evidence">Evidence</a>
+        <a href="dashboard/index.html">Dashboard</a>
+        <a href="docs/benchmark-report-excerpts.html">Report Excerpts</a>
+        <a href="docs/public-private-boundary.md">Boundary</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Public benchmark transparency kit</div>
+      <h1>LEONA by DLG Labs</h1>
+      <p>Autonomous repair benchmark evidence with reproducible telemetry, diff traces, retry counts, rollback events, and controlled public boundaries.</p>
+      <div class="actions">
+        <a class="button primary" href="dashboard/index.html">Open Dashboard</a>
+        <a class="button" href="docs/benchmark-report-excerpts.html">Read Excerpts</a>
+        <a class="button" href="benchmark-framework/">Benchmark Framework</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="evidence">
+    <div class="section-head">
+      <h2>Benchmark Evidence</h2>
+      <p>The public package shows the result surface without shipping private orchestration, board routing, repair heuristics, or enterprise control paths.</p>
+    </div>
+    <div class="metrics">
+      <div class="metric"><strong>1000/1000</strong><span>controlled repair cases passed</span></div>
+      <div class="metric"><strong>0</strong><span>unauthorized mutation attempts</span></div>
+      <div class="metric"><strong>0</strong><span>test files modified</span></div>
+      <div class="metric"><strong>5</strong><span>rollback events recorded</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>SWE-bench Style Transparency</h2>
+      <p>Public-facing traces include failure summaries, repair diffs, retry counts, changed files, commits, category coverage, and OSS mutation-repair probes.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-image">
+        <img src="assets/screenshots/report-excerpts.png" alt="LEONA benchmark report excerpts screenshot">
+      </div>
+      <div class="proof-list">
+        <h3>Published Artifacts</h3>
+        <ul>
+          <li>Static benchmark dashboard with embedded telemetry.</li>
+          <li>Raw `results.json` and `benchmark-report.md` evidence.</li>
+          <li>Curated report excerpts for public readers.</li>
+          <li>Validation CLI and terminal viewer.</li>
+          <li>Public/private boundary documentation.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Controlled Release Boundary</h2>
+      <p>This repo is designed to be published without exposing the private product engine.</p>
+    </div>
+    <div class="boundary">
+      <div class="panel">
+        <h3>Public</h3>
+        <p>Benchmark framework, dashboard, evidence, report excerpts, telemetry schema, TUI, and validation wrappers.</p>
+      </div>
+      <div class="panel">
+        <h3>Private</h3>
+        <p>Advanced orchestration, board routing, repair heuristics, provider routing, local write authority, and enterprise controls.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    LEONA by DLG Labs. Controlled public benchmark release.
+  </footer>
+</body>
+</html>

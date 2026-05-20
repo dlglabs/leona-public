@@ -52,6 +52,18 @@ node .\tools\render_summary.js
 python .\tui\leona_tui.py --limit 5
 ```
 
+Open the lightweight landing page:
+
+```powershell
+start .\index.html
+```
+
+Read the public benchmark excerpts:
+
+```powershell
+start .\docs\benchmark-report-excerpts.html
+```
+
 ## Evidence Integrity Note
 
 Some raw evidence files include legacy local provenance strings from the private development environment. Those strings are preserved so the evidence remains traceable. They do not include the private core implementation.
