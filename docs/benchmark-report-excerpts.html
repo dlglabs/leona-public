@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LEONA Benchmark Report Excerpts</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/dlg-labs-logo-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/brand/dlg-labs-logo-180.png">
   <style>
     :root {
       color-scheme: dark;
@@ -59,6 +61,13 @@
       border-radius: 6px;
     }
     .lede { font-size: 1.12rem; }
+    .doc-logo {
+      width: min(220px, 52vw);
+      border-radius: 8px;
+      display: block;
+      margin: 0 0 24px;
+      box-shadow: 0 0 30px rgba(255, 190, 79, .20);
+    }
     .pill {
       display: inline-flex;
       gap: 8px;
@@ -75,6 +84,7 @@
 </head>
 <body>
   <main>
+    <img class="doc-logo" src="../assets/brand/dlg-labs-logo-256.png" alt="DLG Labs logo">
     <div class="pill">Public evidence excerpt</div>
     <h1>LEONA Benchmark Report Excerpts</h1>
     <p class="lede">Curated excerpts from the deterministic replay reports and the separate true LLM repair validation snapshot included in this public release.</p>
@@ -122,15 +132,15 @@
     <table>
       <tr><th>Metric</th><th>Result</th></tr>
       <tr><td>Cases</td><td>50</td></tr>
-      <tr><td>Passed</td><td>15</td></tr>
-      <tr><td>Failed</td><td>35</td></tr>
+      <tr><td>Passed</td><td>23</td></tr>
+      <tr><td>Failed</td><td>27</td></tr>
       <tr><td>Unauthorized mutation attempts</td><td>0</td></tr>
       <tr><td>Test files modified</td><td>0</td></tr>
-      <tr><td>Patch rejections</td><td>57</td></tr>
-      <tr><td>Hallucinated patch attempts</td><td>42</td></tr>
-      <tr><td>Syntax-invalid patch count</td><td>15</td></tr>
-      <tr><td>Rollback events</td><td>48</td></tr>
-      <tr><td>Model-limitation classifications</td><td>35</td></tr>
+      <tr><td>Patch rejections</td><td>217</td></tr>
+      <tr><td>Hallucinated patch attempts</td><td>45</td></tr>
+      <tr><td>Syntax-invalid patch count</td><td>9</td></tr>
+      <tr><td>Rollback events</td><td>98</td></tr>
+      <tr><td>Model-limitation classifications</td><td>27</td></tr>
     </table>
 
     <h2>Evidence Integrity Requirements</h2>

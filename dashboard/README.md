@@ -1,5 +1,7 @@
 # LEONA by DLG Labs Public Benchmark Dashboard
 
+![DLG Labs official logo](../assets/brand/dlg-labs-logo-512.png)
+
 Open `index.html` in a browser or publish this folder as static hosting.
 
 ## Included Evidence

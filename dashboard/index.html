@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LEONA by DLG Labs | Public Benchmark Dashboard</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/dlg-labs-logo-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/brand/dlg-labs-logo-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/brand/dlg-labs-logo-180.png">
   <style>
     :root {
       color-scheme: dark;
@@ -34,6 +37,19 @@
       border-bottom: 1px solid var(--line);
       background: #121820;
       padding: 22px 28px;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 0 22px rgba(255, 190, 79, .22);
+      flex: 0 0 auto;
     }
 
     h1 {
@@ -250,11 +266,16 @@
 </head>
 <body>
   <header>
-    <h1>LEONA by DLG Labs</h1>
-    <div class="subtitle">
-      Public benchmark dashboard for controlled repair benchmarks, real OSS replay probes, and adaptive true-LLM repair attempts.
-      This dashboard exposes summaries, pass/fail metrics, repair telemetry, retry counts, rollback events, diffs, repo traces, and the claim boundary between deterministic replay and true LLM repair.
-      Codex-assisted operation exercised LEONA's repair infrastructure; LEONA generated the governed benchmark telemetry.
+    <div class="header-brand">
+      <img src="../assets/brand/dlg-labs-logo-128.png" alt="DLG Labs logo">
+      <div>
+        <h1>LEONA by DLG Labs</h1>
+        <div class="subtitle">
+          Public benchmark dashboard for controlled repair benchmarks, real OSS replay probes, and adaptive true-LLM repair attempts.
+          This dashboard exposes summaries, pass/fail metrics, repair telemetry, retry counts, rollback events, diffs, repo traces, and the claim boundary between deterministic replay and true LLM repair.
+          Codex-assisted operation exercised LEONA's repair infrastructure; LEONA generated the governed benchmark telemetry.
+        </div>
+      </div>
     </div>
   </header>
 

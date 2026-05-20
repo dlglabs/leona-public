@@ -1,5 +1,7 @@
 # LEONA by DLG Labs
 
+![DLG Labs official logo](assets/brand/dlg-labs-logo-512.png)
+
 Controlled public benchmark and transparency kit for autonomous code repair.
 
 Website: [www.dlglabs.org](https://www.dlglabs.org)

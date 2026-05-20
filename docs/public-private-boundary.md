@@ -1,5 +1,7 @@
 # Public / Private Boundary
 
+![DLG Labs official logo](../assets/brand/dlg-labs-logo-512.png)
+
 LEONA by DLG Labs is being released in controlled layers. This repository is the public transparency layer.
 
 Public contact: [founder@dlglabs.org](mailto:founder@dlglabs.org)

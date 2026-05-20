@@ -1,5 +1,7 @@
 # LEONA by DLG Labs: Repair Benchmark Technical Brief
 
+![DLG Labs official logo](../assets/brand/dlg-labs-logo-512.png)
+
 ## Executive Summary
 
 LEONA by DLG Labs completed a controlled 1,000-case deterministic mutation-replay benchmark designed to test repair discipline across procedurally varied Python micro-repositories. The final corrected run achieved **1,000/1,000 passing cases**, with **0 test-file modifications**, **0 unauthorized mutation attempts**, and **1,000/1,000 convergence success**. The benchmark was archived with raw telemetry and a human-readable report for repeatable review.

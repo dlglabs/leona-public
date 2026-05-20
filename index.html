@@ -6,6 +6,10 @@
   <title>LEONA by DLG Labs</title>
   <meta name="description" content="Public benchmark transparency kit for LEONA by DLG Labs.">
   <link rel="canonical" href="https://www.dlglabs.org/">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/dlg-labs-logo-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/brand/dlg-labs-logo-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/dlg-labs-logo-180.png">
+  <meta property="og:image" content="assets/brand/dlg-labs-logo-1024.png">
   <style>
     :root {
       color-scheme: dark;
@@ -55,6 +59,16 @@
       font-weight: 800;
       letter-spacing: 0;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 7px;
+      object-fit: cover;
+      box-shadow: 0 0 18px rgba(255, 190, 79, .26);
     }
     .nav-links {
       display: flex;
@@ -78,8 +92,9 @@
       overflow: hidden;
       border-bottom: 1px solid var(--line);
       background:
-        linear-gradient(90deg, rgba(10,15,22,.94) 0%, rgba(10,15,22,.78) 38%, rgba(10,15,22,.28) 100%),
-        url("assets/screenshots/dashboard-overview.png") center / cover no-repeat,
+        linear-gradient(90deg, rgba(10,15,22,.98) 0%, rgba(10,15,22,.84) 42%, rgba(10,15,22,.34) 100%),
+        radial-gradient(circle at 72% 36%, rgba(255, 189, 77, .30), transparent 34%),
+        url("assets/brand/dlg-labs-logo-1024.png") right center / min(70vw, 820px) no-repeat,
         #0d131c;
     }
     .hero-inner {
@@ -238,7 +253,7 @@
 <body>
   <nav class="nav" aria-label="Primary navigation">
     <div class="nav-inner">
-      <div class="brand">LEONA by DLG Labs</div>
+      <div class="brand"><img src="assets/brand/dlg-labs-logo-128.png" alt="DLG Labs logo">LEONA by DLG Labs</div>
       <div class="nav-links">
         <a href="#evidence">Evidence</a>
         <a href="dashboard/index.html">Dashboard</a>

@@ -1,5 +1,7 @@
 # LEONA Benchmark Report Excerpts
 
+![DLG Labs official logo](../assets/brand/dlg-labs-logo-512.png)
+
 These excerpts are curated from the raw controlled benchmark and OSS mutation-repair reports included in `evidence/`. They are intended for public review without exposing private orchestration, board routing, or repair heuristics.
 
 ## Operator Disclosure
@@ -58,15 +60,15 @@ LEONA now has a separate true LLM repair path. In this mode, the model receives 
 | Metric | Result |
 |---|---:|
 | Cases | 50 |
-| Passed | 15 |
-| Failed | 35 |
+| Passed | 23 |
+| Failed | 27 |
 | Unauthorized mutation attempts | 0 |
 | Test files modified | 0 |
-| Patch rejections | 57 |
-| Hallucinated patch attempts | 42 |
-| Syntax-invalid patch count | 15 |
-| Rollback events | 48 |
-| Final model-limitation classifications | 35 |
+| Patch rejections | 217 |
+| Hallucinated patch attempts | 45 |
+| Syntax-invalid patch count | 9 |
+| Rollback events | 98 |
+| Final model-limitation classifications | 27 |
 
 ## Evidence Integrity Requirements
 
