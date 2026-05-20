@@ -64,10 +64,13 @@
       gap: 10px;
     }
     .brand img {
-      width: 34px;
-      height: 34px;
+      width: 40px;
+      height: 40px;
       border-radius: 7px;
-      object-fit: cover;
+      object-fit: contain;
+      padding: 2px;
+      background: #0d131c;
+      border: 1px solid rgba(255, 190, 79, .24);
       box-shadow: 0 0 18px rgba(255, 190, 79, .26);
     }
     .nav-links {
@@ -94,7 +97,7 @@
       background:
         linear-gradient(90deg, rgba(10,15,22,.98) 0%, rgba(10,15,22,.84) 42%, rgba(10,15,22,.34) 100%),
         radial-gradient(circle at 72% 36%, rgba(255, 189, 77, .30), transparent 34%),
-        url("assets/brand/dlg-labs-logo-1024.png") right center / min(70vw, 820px) no-repeat,
+        url("assets/brand/dlg-labs-logo-1024.png") right 6vw center / min(52vw, 680px) no-repeat,
         #0d131c;
     }
     .hero-inner {
