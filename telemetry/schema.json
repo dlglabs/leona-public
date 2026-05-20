@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LEONA Public Benchmark Telemetry",
+  "type": "object",
+  "required": ["generatedAt", "controlled", "oss", "evidence"],
+  "properties": {
+    "generatedAt": { "type": "string" },
+    "controlled": {
+      "type": "object",
+      "required": [
+        "label",
+        "total",
+        "passed",
+        "failed",
+        "convergenceSuccess",
+        "unauthorizedMutationAttempts",
+        "rollbackEvents",
+        "testFilesModified",
+        "averageRepairDurationMs"
+      ],
+      "properties": {
+        "label": { "type": "string" },
+        "root": { "type": "string" },
+        "seed": { "type": "string" },
+        "total": { "type": "integer" },
+        "passed": { "type": "integer" },
+        "failed": { "type": "integer" },
+        "convergenceSuccess": { "type": "integer" },
+        "unauthorizedMutationAttempts": { "type": "integer" },
+        "rollbackEvents": { "type": "integer" },
+        "testFilesModified": { "type": "integer" },
+        "averageRepairDurationMs": { "type": "integer" },
+        "retryDistribution": { "type": "array" },
+        "categories": { "type": "array" },
+        "cases": { "type": "array" }
+      }
+    },
+    "oss": {
+      "type": "object",
+      "required": ["label", "total", "passed", "failed"],
+      "properties": {
+        "label": { "type": "string" },
+        "total": { "type": "integer" },
+        "passed": { "type": "integer" },
+        "failed": { "type": "integer" },
+        "attempts": { "type": "array" }
+      }
+    },
+    "evidence": { "type": "object" }
+  }
+}
