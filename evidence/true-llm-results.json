@@ -1,0 +1,279 @@
+{
+  "root": "C:\\DevNexusTargets\\oss-repair-attempts-llm-smoke-6",
+  "generatedAt": "2026-05-20T01:58:26.472Z",
+  "repairMode": "true-llm",
+  "provider": "ollama",
+  "model": "qwen2.5-coder:14b",
+  "total": 5,
+  "passCount": 1,
+  "failCount": 4,
+  "classifications": {
+    "PASS": 1,
+    "MODEL_LIMITATION": 4
+  },
+  "unauthorizedMutationAttempts": 0,
+  "rollbackEvents": 9,
+  "testFilesModified": 0,
+  "hallucinatedPatchAttempts": 3,
+  "syntaxInvalidPatchCount": 0,
+  "convergenceRetries": 9,
+  "patchRejectionCount": 3,
+  "modelTokenUsage": {
+    "promptTokens": 27358,
+    "completionTokens": 2451,
+    "totalTokens": 29809
+  },
+  "averageRepairDurationMs": 18059,
+  "results": [
+    {
+      "id": "0001_toolz-take_v0",
+      "repo": "toolz",
+      "repoUrl": "https://github.com/pytoolz/toolz",
+      "targetSourceFile": "toolz/itertoolz.py",
+      "contractTestFile": "leona_contract_tests/test_toolz_take_v0.py",
+      "retryCount": 1,
+      "repairDurationMs": 7084,
+      "rollbackEvents": 0,
+      "convergenceRetries": 0,
+      "hallucinatedPatchAttempts": 0,
+      "syntaxInvalidPatchCount": 0,
+      "patchRejectionCount": 0,
+      "modelTokenUsage": {
+        "promptTokens": 1537,
+        "completionTokens": 102,
+        "totalTokens": 1639
+      },
+      "filesChanged": [
+        "toolz/itertoolz.py"
+      ],
+      "unauthorizedMutationAttempts": 0,
+      "testFilesModified": false,
+      "beforePytestSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_take_preserves_requested_count_variant_0 ________________\n    def test_take_preserves_requested_count_variant_0():\n        data = [\"atlas\",\"bloom\",\"cinder\"]\n>       assert list(take(1, data)) == data[:1]\nE       AssertionError: assert [] == ['atlas']\nE         \nE         Right contains one more item: 'atlas'\nE         Use -v to get more diff\nleona_contract_tests\\test_toolz_take_v0.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_take_v0.py::test_take_preserves_requested_count_variant_0\n1 failed in 0.04s",
+      "afterPytestSummary": ".                                                                        [100%]\n1 passed in 0.02s",
+      "baselinePytestSummary": ".                                                                        [100%]\n1 passed in 0.02s",
+      "beforeExitCode": 1,
+      "afterExitCode": 0,
+      "repairDiff": "diff --git a/toolz/itertoolz.py b/toolz/itertoolz.py\nindex 2608f80..354ecf2 100644\n--- a/toolz/itertoolz.py\n+++ b/toolz/itertoolz.py\n@@ -319,7 +319,7 @@ def take(n, seq):\n         drop\n         tail\n     \"\"\"\n-    return itertools.islice(seq, max(0, n - 1))\n+    return itertools.islice(seq, n)\n \n \n def tail(n, seq):\n",
+      "repairCommitHash": "c81eceb",
+      "baselineCommitHash": "c4f7a33",
+      "brokenCommitHash": "3059d32",
+      "checkpointId": "checkpoint_1779242222229_tyjmjyd4",
+      "applyTelemetry": {
+        "applied": true,
+        "checkpointId": "checkpoint_1779242222229_tyjmjyd4",
+        "files": [
+          {
+            "path": "toolz/itertoolz.py",
+            "action": "MODIFY",
+            "bytes": 27697
+          }
+        ],
+        "rootDir": "C:\\DevNexusTargets\\oss-repair-attempts-llm-smoke-6\\repos\\0001_toolz-take_v0",
+        "appliedAt": "2026-05-20T01:57:02.235Z"
+      },
+      "finalClassification": "PASS",
+      "passed": true,
+      "errorMessage": "",
+      "promptTemplateId": "true-llm-repair-v1",
+      "repairMode": "true-llm",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:14b"
+    },
+    {
+      "id": "0002_toolz-nth_v0",
+      "repo": "toolz",
+      "repoUrl": "https://github.com/pytoolz/toolz",
+      "targetSourceFile": "toolz/itertoolz.py",
+      "contractTestFile": "leona_contract_tests/test_toolz_nth_v0.py",
+      "retryCount": 3,
+      "repairDurationMs": 14415,
+      "rollbackEvents": 3,
+      "convergenceRetries": 3,
+      "hallucinatedPatchAttempts": 0,
+      "syntaxInvalidPatchCount": 0,
+      "patchRejectionCount": 0,
+      "modelTokenUsage": {
+        "promptTokens": 5907,
+        "completionTokens": 261,
+        "totalTokens": 6168
+      },
+      "filesChanged": [],
+      "unauthorizedMutationAttempts": 0,
+      "testFilesModified": false,
+      "beforePytestSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_0 ___________________\n    def test_nth_uses_requested_index_variant_0():\n        data = [11,23,37,41,59,61,73]\n>       assert nth(1, data) == data[1]\nE       assert 11 == 23\nE        +  where 11 = nth(1, [11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v0.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v0.py::test_nth_uses_requested_index_variant_0\n1 failed in 0.04s",
+      "afterPytestSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_0 ___________________\n    def test_nth_uses_requested_index_variant_0():\n        data = [11,23,37,41,59,61,73]\n        assert nth(1, data) == data[1]\n>       assert nth(1, iter(data)) == data[1]\nE       assert 11 == 23\nE        +  where 11 = nth(1, <list_iterator object at 0x000001D4A05D7F10>)\nE        +    where <list_iterator object at 0x000001D4A05D7F10> = iter([11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v0.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v0.py::test_nth_uses_requested_index_variant_0\n1 failed in 0.04s",
+      "baselinePytestSummary": ".                                                                        [100%]\n1 passed in 0.02s",
+      "beforeExitCode": 1,
+      "afterExitCode": 1,
+      "repairDiff": "",
+      "repairCommitHash": "",
+      "baselineCommitHash": "70a95f8",
+      "brokenCommitHash": "3e6fac2",
+      "checkpointId": "checkpoint_1779242236685_23d6ckri",
+      "applyTelemetry": {
+        "applied": true,
+        "checkpointId": "checkpoint_1779242236685_23d6ckri",
+        "files": [
+          {
+            "path": "toolz/itertoolz.py",
+            "action": "MODIFY",
+            "bytes": 27697
+          }
+        ],
+        "rootDir": "C:\\DevNexusTargets\\oss-repair-attempts-llm-smoke-6\\repos\\0002_toolz-nth_v0",
+        "appliedAt": "2026-05-20T01:57:16.689Z"
+      },
+      "finalClassification": "MODEL_LIMITATION",
+      "passed": false,
+      "errorMessage": "LLM repair did not satisfy benchmark constraints",
+      "promptTemplateId": "true-llm-repair-v1",
+      "repairMode": "true-llm",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:14b"
+    },
+    {
+      "id": "0003_tqdm-disp-len_v0",
+      "repo": "tqdm",
+      "repoUrl": "https://github.com/tqdm/tqdm",
+      "targetSourceFile": "tqdm/utils.py",
+      "contractTestFile": "leona_contract_tests/test_tqdm_disp_len_v0.py",
+      "retryCount": 3,
+      "repairDurationMs": 20032,
+      "rollbackEvents": 3,
+      "convergenceRetries": 3,
+      "hallucinatedPatchAttempts": 0,
+      "syntaxInvalidPatchCount": 0,
+      "patchRejectionCount": 0,
+      "modelTokenUsage": {
+        "promptTokens": 7010,
+        "completionTokens": 525,
+        "totalTokens": 7535
+      },
+      "filesChanged": [],
+      "unauthorizedMutationAttempts": 0,
+      "testFilesModified": false,
+      "beforePytestSummary": "leona_contract_tests\\test_tqdm_disp_len_v0.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v0.py::test_disp_len_ignores_ansi_variant_0\n1 failed, 2 warnings in 0.04s",
+      "afterPytestSummary": "leona_contract_tests\\test_tqdm_disp_len_v0.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v0.py::test_disp_len_ignores_ansi_variant_0\n1 failed, 2 warnings in 0.04s",
+      "baselinePytestSummary": ".                                                                        [100%]\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n1 passed, 2 warnings in 0.02s",
+      "beforeExitCode": 1,
+      "afterExitCode": 1,
+      "repairDiff": "",
+      "repairCommitHash": "",
+      "baselineCommitHash": "6d8f21c",
+      "brokenCommitHash": "4ade0a8",
+      "checkpointId": "checkpoint_1779242256684_xmeempm5",
+      "applyTelemetry": {
+        "applied": true,
+        "checkpointId": "checkpoint_1779242256684_xmeempm5",
+        "files": [
+          {
+            "path": "tqdm/utils.py",
+            "action": "MODIFY",
+            "bytes": 11793
+          }
+        ],
+        "rootDir": "C:\\DevNexusTargets\\oss-repair-attempts-llm-smoke-6\\repos\\0003_tqdm-disp-len_v0",
+        "appliedAt": "2026-05-20T01:57:36.688Z"
+      },
+      "finalClassification": "MODEL_LIMITATION",
+      "passed": false,
+      "errorMessage": "LLM repair did not satisfy benchmark constraints",
+      "promptTemplateId": "true-llm-repair-v1",
+      "repairMode": "true-llm",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:14b"
+    },
+    {
+      "id": "0004_tqdm-is-ascii_v0",
+      "repo": "tqdm",
+      "repoUrl": "https://github.com/tqdm/tqdm",
+      "targetSourceFile": "tqdm/utils.py",
+      "contractTestFile": "leona_contract_tests/test_tqdm_is_ascii_v0.py",
+      "retryCount": 3,
+      "repairDurationMs": 22042,
+      "rollbackEvents": 3,
+      "convergenceRetries": 3,
+      "hallucinatedPatchAttempts": 0,
+      "syntaxInvalidPatchCount": 0,
+      "patchRejectionCount": 0,
+      "modelTokenUsage": {
+        "promptTokens": 7244,
+        "completionTokens": 585,
+        "totalTokens": 7829
+      },
+      "filesChanged": [],
+      "unauthorizedMutationAttempts": 0,
+      "testFilesModified": false,
+      "beforePytestSummary": "leona_contract_tests\\test_tqdm_is_ascii_v0.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v0.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_0\n1 failed, 2 warnings in 0.04s",
+      "afterPytestSummary": "leona_contract_tests\\test_tqdm_is_ascii_v0.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v0.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_0\n1 failed, 2 warnings in 0.04s",
+      "baselinePytestSummary": ".                                                                        [100%]\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n1 passed, 2 warnings in 0.02s",
+      "beforeExitCode": 1,
+      "afterExitCode": 1,
+      "repairDiff": "",
+      "repairCommitHash": "",
+      "baselineCommitHash": "1d60026",
+      "brokenCommitHash": "096e89d",
+      "checkpointId": "checkpoint_1779242278745_xf87vrkr",
+      "applyTelemetry": {
+        "applied": true,
+        "checkpointId": "checkpoint_1779242278745_xf87vrkr",
+        "files": [
+          {
+            "path": "tqdm/utils.py",
+            "action": "MODIFY",
+            "bytes": 11835
+          }
+        ],
+        "rootDir": "C:\\DevNexusTargets\\oss-repair-attempts-llm-smoke-6\\repos\\0004_tqdm-is-ascii_v0",
+        "appliedAt": "2026-05-20T01:57:58.754Z"
+      },
+      "finalClassification": "MODEL_LIMITATION",
+      "passed": false,
+      "errorMessage": "LLM repair did not satisfy benchmark constraints",
+      "promptTemplateId": "true-llm-repair-v1",
+      "repairMode": "true-llm",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:14b"
+    },
+    {
+      "id": "0005_sortedcontainers-membership_v0",
+      "repo": "python-sortedcontainers",
+      "repoUrl": "https://github.com/grantjenks/python-sortedcontainers",
+      "targetSourceFile": "src/sortedcontainers/sortedlist.py",
+      "contractTestFile": "leona_contract_tests/test_sortedcontainers_membership_v0.py",
+      "retryCount": 3,
+      "repairDurationMs": 26722,
+      "rollbackEvents": 0,
+      "convergenceRetries": 0,
+      "hallucinatedPatchAttempts": 3,
+      "syntaxInvalidPatchCount": 0,
+      "patchRejectionCount": 3,
+      "modelTokenUsage": {
+        "promptTokens": 5660,
+        "completionTokens": 978,
+        "totalTokens": 6638
+      },
+      "filesChanged": [],
+      "unauthorizedMutationAttempts": 0,
+      "testFilesModified": false,
+      "beforePytestSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n____________________ test_sorted_list_membership_variant_0 ____________________\n    def test_sorted_list_membership_variant_0():\n        values = SortedList([1, 3, 5, 7])\n>       assert 5 in values\nE       assert 5 in SortedList([1, 3, 5, 7])\nleona_contract_tests\\test_sortedcontainers_membership_v0.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_membership_v0.py::test_sorted_list_membership_variant_0\n1 failed in 0.03s",
+      "afterPytestSummary": "",
+      "baselinePytestSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+      "beforeExitCode": 1,
+      "afterExitCode": null,
+      "repairDiff": "",
+      "repairCommitHash": "",
+      "baselineCommitHash": "701a953",
+      "brokenCommitHash": "ba7ddca",
+      "checkpointId": "",
+      "applyTelemetry": null,
+      "finalClassification": "MODEL_LIMITATION",
+      "passed": false,
+      "errorMessage": "Edit search text did not match src/sortedcontainers/sortedlist.py",
+      "promptTemplateId": "true-llm-repair-v1",
+      "repairMode": "true-llm",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:14b"
+    }
+  ]
+}

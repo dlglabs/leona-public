@@ -2,7 +2,7 @@
 
 Controlled public benchmark and transparency kit for autonomous code repair.
 
-This repository is intentionally a public release surface, not the complete private product. It contains benchmark evidence, a public dashboard, telemetry schemas, a lightweight orchestration shell, a terminal viewer, and the synthetic benchmark framework needed to inspect or reproduce the public repair benchmark.
+This repository is intentionally a public release surface, not the complete private product. It contains benchmark evidence, a public dashboard, telemetry schemas, a lightweight orchestration shell, a terminal viewer, the synthetic benchmark framework, and a clearly separated true-LLM repair validation snapshot.
 
 ## What Is Included
 
@@ -26,10 +26,17 @@ This repository is intentionally a public release surface, not the complete priv
 ## Evidence Summary
 
 - Controlled synthetic benchmark: 1,000/1,000 passing repair cases.
-- Real OSS mutation-repair attempts: 5/5 passing attempts.
+- Real OSS deterministic mutation-replay attempts: 5/5 passing attempts.
+- True LLM OSS mutation-repair validation: 1/5 passing attempts with 4/5 retained as `MODEL_LIMITATION`.
 - Unauthorized mutation attempts: 0.
 - Controlled test-file modifications: 0.
 - Controlled rollback events: 5.
+
+## Claim Boundary
+
+The controlled 1,000-case benchmark and deterministic OSS replay evidence validate the harness, mutation boundaries, rollback discipline, diffs, commits, and telemetry pipeline.
+
+The true-LLM validation is separate. It measures model-generated diagnosis and patch creation without known-answer repair replay. Current public evidence shows the pipeline works and fails closed, but the local model snapshot is not yet a high-success autonomous repair result.
 
 ## Quick Start
 

@@ -251,7 +251,7 @@
     <div class="hero-inner">
       <div class="eyebrow">Public benchmark transparency kit</div>
       <h1>LEONA by DLG Labs</h1>
-      <p>Autonomous repair benchmark evidence with reproducible telemetry, diff traces, retry counts, rollback events, and controlled public boundaries.</p>
+      <p>Autonomous repair benchmark evidence with reproducible telemetry, diff traces, retry counts, rollback events, controlled public boundaries, and a separate true-LLM repair validation snapshot.</p>
       <div class="actions">
         <a class="button primary" href="dashboard/index.html">Open Dashboard</a>
         <a class="button" href="docs/benchmark-report-excerpts.html">Read Excerpts</a>
@@ -269,14 +269,14 @@
       <div class="metric"><strong>1000/1000</strong><span>controlled repair cases passed</span></div>
       <div class="metric"><strong>0</strong><span>unauthorized mutation attempts</span></div>
       <div class="metric"><strong>0</strong><span>test files modified</span></div>
-      <div class="metric"><strong>5</strong><span>rollback events recorded</span></div>
+      <div class="metric"><strong>1/5</strong><span>true LLM repair validation passed</span></div>
     </div>
   </section>
 
   <section>
     <div class="section-head">
       <h2>SWE-bench Style Transparency</h2>
-      <p>Public-facing traces include failure summaries, repair diffs, retry counts, changed files, commits, category coverage, and OSS mutation-repair probes.</p>
+      <p>Public-facing traces include failure summaries, repair diffs, retry counts, changed files, commits, category coverage, deterministic OSS replay probes, and true LLM repair attempts.</p>
     </div>
     <div class="proof-grid">
       <div class="proof-image">
@@ -287,6 +287,7 @@
         <ul>
           <li>Static benchmark dashboard with embedded telemetry.</li>
           <li>Raw `results.json` and `benchmark-report.md` evidence.</li>
+          <li>Separate true-LLM validation telemetry with model-limitation failures retained.</li>
           <li>Curated report excerpts for public readers.</li>
           <li>Validation CLI and terminal viewer.</li>
           <li>Public/private boundary documentation.</li>

@@ -28,9 +28,9 @@ LEONA by DLG Labs completed a controlled 1,000-case autonomous repair benchmark 
 
 The controlled benchmark covered 30 repair families, including arithmetic guards, statistics edge cases, parsing, validation, normalization, matrix transforms, class method contracts, cart and pricing logic, auth parsing, CSV quote handling, and limited multi-file failures involving helper modules, import mismatches, constants drift, and shared interface contracts.
 
-## OSS Mutation-Repair Attempts
+## Deterministic OSS Mutation-Replay Attempts
 
-LEONA also completed five real open-source micro-repository mutation-repair attempts. These are not claims of upstream defects; they are controlled mutation-repair probes run against real project structures.
+LEONA also completed five real open-source micro-repository mutation-replay attempts. These are not claims of upstream defects; they are controlled mutation-repair probes run against real project structures.
 
 | Repository | Result | Repair Commit |
 |---|---:|---|
@@ -40,8 +40,26 @@ LEONA also completed five real open-source micro-repository mutation-repair atte
 | cachetools | PASS | `6ded9bf` |
 | boltons | PASS | `377f584` |
 
+## True LLM Repair Validation
+
+LEONA now has a separate true LLM repair path. In this mode, the model receives pytest telemetry and authorized source context, but it does not receive known fixed answers. Proposed patches are parsed, validated, applied through the frozen execution runner, and retried only within the configured attempt limit.
+
+| Metric | Result |
+|---|---:|
+| Cases | 5 |
+| Passed | 1 |
+| Failed | 4 |
+| Unauthorized mutation attempts | 0 |
+| Test files modified | 0 |
+| Patch rejections | 3 |
+| Hallucinated patch attempts | 3 |
+| Rollback events | 9 |
+| Final model-limitation classifications | 4 |
+
 ## Public Interpretation
 
-The public evidence demonstrates that the repair workflow can repeatedly preserve immutable tests, apply scoped source changes, verify passing tests, record rollback events, and produce Git-traceable diffs across a large synthetic corpus plus a small OSS mutation-repair sample.
+The public evidence demonstrates that the repair workflow can repeatedly preserve immutable tests, apply scoped source changes, verify passing tests, record rollback events, and produce Git-traceable diffs across a large synthetic corpus plus a small deterministic OSS mutation-replay sample.
+
+The true LLM evidence demonstrates that the autonomous repair pipeline is active and governed, but it should not be blended with the deterministic replay success rate.
 
 The private product layer remains separate. This public release does not include advanced orchestration internals, board routing, repair heuristics, provider routing, local write authority controls, or enterprise policy systems.

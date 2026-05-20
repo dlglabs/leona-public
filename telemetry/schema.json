@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "LEONA Public Benchmark Telemetry",
   "type": "object",
-  "required": ["generatedAt", "controlled", "oss", "evidence"],
+  "required": ["generatedAt", "controlled", "oss", "llm", "evidence"],
   "properties": {
     "generatedAt": { "type": "string" },
     "controlled": {
@@ -44,6 +44,42 @@
         "passed": { "type": "integer" },
         "failed": { "type": "integer" },
         "attempts": { "type": "array" }
+      }
+    },
+    "llm": {
+      "type": "object",
+      "required": [
+        "label",
+        "repairMode",
+        "provider",
+        "model",
+        "total",
+        "passed",
+        "failed",
+        "unauthorizedMutationAttempts",
+        "rollbackEvents",
+        "testFilesModified",
+        "patchRejectionCount",
+        "hallucinatedPatchAttempts",
+        "syntaxInvalidPatchCount",
+        "modelTokenUsage"
+      ],
+      "properties": {
+        "label": { "type": "string" },
+        "repairMode": { "type": "string" },
+        "provider": { "type": "string" },
+        "model": { "type": "string" },
+        "total": { "type": "integer" },
+        "passed": { "type": "integer" },
+        "failed": { "type": "integer" },
+        "unauthorizedMutationAttempts": { "type": "integer" },
+        "rollbackEvents": { "type": "integer" },
+        "testFilesModified": { "type": "integer" },
+        "patchRejectionCount": { "type": "integer" },
+        "hallucinatedPatchAttempts": { "type": "integer" },
+        "syntaxInvalidPatchCount": { "type": "integer" },
+        "modelTokenUsage": { "type": "object" },
+        "cases": { "type": "array" }
       }
     },
     "evidence": { "type": "object" }

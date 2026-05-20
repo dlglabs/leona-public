@@ -77,10 +77,10 @@
   <main>
     <div class="pill">Public evidence excerpt</div>
     <h1>LEONA Benchmark Report Excerpts</h1>
-    <p class="lede">Curated excerpts from the controlled benchmark and OSS mutation-repair reports included in this public release.</p>
+    <p class="lede">Curated excerpts from the deterministic replay reports and the separate true LLM repair validation snapshot included in this public release.</p>
 
     <h2>Controlled 1,000-Case Repair Benchmark</h2>
-    <p>LEONA by DLG Labs completed a controlled 1,000-case autonomous repair benchmark across procedurally varied Python micro-repositories.</p>
+    <p>LEONA by DLG Labs completed a controlled 1,000-case deterministic mutation-replay benchmark across procedurally varied Python micro-repositories.</p>
     <table>
       <tr><th>Metric</th><th>Result</th></tr>
       <tr><td>Cases</td><td>1,000</td></tr>
@@ -100,8 +100,8 @@
       <tr><td>2</td><td>5</td></tr>
     </table>
 
-    <h2>OSS Mutation-Repair Attempts</h2>
-    <p>These are controlled mutation-repair probes run against real project structures, not claims of live upstream defects.</p>
+    <h2>Deterministic OSS Mutation-Replay Attempts</h2>
+    <p>These are controlled deterministic mutation-replay probes run against real project structures, not claims of live upstream defects.</p>
     <table>
       <tr><th>Repository</th><th>Result / Commit</th></tr>
       <tr><td>toolz</td><td>PASS / <code>3ce6870</code></td></tr>
@@ -111,8 +111,23 @@
       <tr><td>boltons</td><td>PASS / <code>377f584</code></td></tr>
     </table>
 
+    <h2>True LLM Repair Validation</h2>
+    <p>This separate validation path removes known-answer replay from the repair step. The model receives pytest telemetry and authorized source context, then LEONA validates and applies the proposed patch through the frozen execution chokepoint.</p>
+    <table>
+      <tr><th>Metric</th><th>Result</th></tr>
+      <tr><td>Cases</td><td>5</td></tr>
+      <tr><td>Passed</td><td>1</td></tr>
+      <tr><td>Failed</td><td>4</td></tr>
+      <tr><td>Unauthorized mutation attempts</td><td>0</td></tr>
+      <tr><td>Test files modified</td><td>0</td></tr>
+      <tr><td>Patch rejections</td><td>3</td></tr>
+      <tr><td>Hallucinated patch attempts</td><td>3</td></tr>
+      <tr><td>Rollback events</td><td>9</td></tr>
+      <tr><td>Model-limitation classifications</td><td>4</td></tr>
+    </table>
+
     <h2>Public Interpretation</h2>
-    <p>The public evidence demonstrates that the repair workflow can preserve immutable tests, apply scoped source changes, verify passing tests, record rollback events, and produce Git-traceable diffs across a large synthetic corpus plus a small OSS mutation-repair sample.</p>
+    <p>The deterministic public evidence demonstrates that the repair workflow can preserve immutable tests, apply scoped source changes, verify passing tests, record rollback events, and produce Git-traceable diffs across a large synthetic corpus plus a small OSS replay sample. The true LLM evidence demonstrates the autonomous repair pipeline is active and governed, but should not be blended with the deterministic replay success rate.</p>
   </main>
 </body>
 </html>
