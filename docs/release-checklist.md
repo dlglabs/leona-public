@@ -1,6 +1,8 @@
 # Controlled Public Release Checklist
 
 - [ ] Confirm repo name and public branding: `LEONA by DLG Labs`.
+- [ ] Configure GitHub Pages custom domain: `www.dlglabs.org`.
+- [ ] Confirm DNS points `www.dlglabs.org` at GitHub Pages.
 - [ ] Confirm no private core files are included.
 - [ ] Confirm raw evidence is intentionally preserved and documented.
 - [ ] Run `node tools/validate_public_evidence.js`.
