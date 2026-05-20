@@ -79,6 +79,12 @@
     <h1>LEONA Benchmark Report Excerpts</h1>
     <p class="lede">Curated excerpts from the deterministic replay reports and the separate true LLM repair validation snapshot included in this public release.</p>
 
+    <h2>Operator Disclosure</h2>
+    <p>Codex was used as a development/operator assistant to launch commands, inspect outputs, and guide repository maintenance. LEONA performed the governed repair benchmark execution through its own repair pipeline, validation layer, rollback system, mutation constraints, and telemetry generation.</p>
+
+    <h2>Governance Layer Separation</h2>
+    <p>Codex governance is the operator/development safety layer. LEONA governance is the product repair/governance layer. Codex's governance layer protects app development, while LEONA's governance layer evaluates and controls repair attempts.</p>
+
     <h2>Controlled 1,000-Case Repair Benchmark</h2>
     <p>LEONA by DLG Labs completed a controlled 1,000-case deterministic mutation-replay benchmark across procedurally varied Python micro-repositories.</p>
     <table>
@@ -115,16 +121,24 @@
     <p>This separate validation path removes known-answer replay from the repair step. The model receives pytest telemetry and authorized source context, then LEONA validates and applies the proposed patch through the frozen execution chokepoint.</p>
     <table>
       <tr><th>Metric</th><th>Result</th></tr>
-      <tr><td>Cases</td><td>5</td></tr>
-      <tr><td>Passed</td><td>1</td></tr>
-      <tr><td>Failed</td><td>4</td></tr>
+      <tr><td>Cases</td><td>50</td></tr>
+      <tr><td>Passed</td><td>15</td></tr>
+      <tr><td>Failed</td><td>35</td></tr>
       <tr><td>Unauthorized mutation attempts</td><td>0</td></tr>
       <tr><td>Test files modified</td><td>0</td></tr>
-      <tr><td>Patch rejections</td><td>3</td></tr>
-      <tr><td>Hallucinated patch attempts</td><td>3</td></tr>
-      <tr><td>Rollback events</td><td>9</td></tr>
-      <tr><td>Model-limitation classifications</td><td>4</td></tr>
+      <tr><td>Patch rejections</td><td>57</td></tr>
+      <tr><td>Hallucinated patch attempts</td><td>42</td></tr>
+      <tr><td>Syntax-invalid patch count</td><td>15</td></tr>
+      <tr><td>Rollback events</td><td>48</td></tr>
+      <tr><td>Model-limitation classifications</td><td>35</td></tr>
     </table>
+
+    <h2>Evidence Integrity Requirements</h2>
+    <p>Valid LEONA repair evidence requires that LEONA's repair pipeline called the model provider, received proposed patches through its repair pipeline, parsed and validated patches, applied patches through the governed execution path, produced pytest before/after results, generated telemetry artifacts, preserved immutable tests, and rejected or recorded unauthorized mutations. Codex did not inject known-answer fixes into the repair loop.</p>
+
+    <h2>Claim Boundary</h2>
+    <p>For deterministic replay: This validates the benchmark harness, mutation boundaries, rollback system, telemetry, and evidence pipeline. It does not prove unknown-bug autonomous reasoning.</p>
+    <p>For true LLM repair: This evaluates actual model-driven repair attempts using pytest telemetry and authorized source context. Successes and failures are preserved honestly.</p>
 
     <h2>Public Interpretation</h2>
     <p>The deterministic public evidence demonstrates that the repair workflow can preserve immutable tests, apply scoped source changes, verify passing tests, record rollback events, and produce Git-traceable diffs across a large synthetic corpus plus a small OSS replay sample. The true LLM evidence demonstrates the autonomous repair pipeline is active and governed, but should not be blended with the deterministic replay success rate.</p>

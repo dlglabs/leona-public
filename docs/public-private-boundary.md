@@ -2,6 +2,16 @@
 
 LEONA by DLG Labs is being released in controlled layers. This repository is the public transparency layer.
 
+## Operator Disclosure
+
+Codex was used as a development/operator assistant to launch commands, inspect outputs, and guide repository maintenance. LEONA performed the governed repair benchmark execution through its own repair pipeline, validation layer, rollback system, mutation constraints, and telemetry generation.
+
+## Governance Layer Separation
+
+Codex governance is the operator/development safety layer. LEONA governance is the product repair/governance layer.
+
+Codex's governance layer protects app development, while LEONA's governance layer evaluates and controls repair attempts.
+
 ## Public In This Repo
 
 | Area | Public Content |
@@ -9,6 +19,7 @@ LEONA by DLG Labs is being released in controlled layers. This repository is the
 | Benchmark evidence | Controlled 1,000-case deterministic replay results, OSS replay attempt results, true LLM validation snapshot, reports, and dashboard data |
 | Benchmark framework | Synthetic micro-repo generation and deterministic validation harness |
 | True LLM repair evidence | Public telemetry snapshot showing model-generated patch attempts, patch rejections, rollbacks, and honest model-limitation classifications |
+| Evidence provenance | Operator disclosure, governance-layer separation, evidence integrity requirements, and claim-boundary language |
 | Telemetry | Public result fields, summaries, retry counts, rollback counts, and diff traces |
 | Dashboard | Static benchmark dashboard suitable for GitHub Pages or local review |
 | TUI | Lightweight terminal viewer for public evidence |
@@ -29,3 +40,13 @@ LEONA by DLG Labs is being released in controlled layers. This repository is the
 ## Release Principle
 
 Publish enough to make the benchmark inspectable and credible. Keep enough private that LEONA remains defensible as a product.
+
+## Claim Boundary
+
+For deterministic replay:
+
+> This validates the benchmark harness, mutation boundaries, rollback system, telemetry, and evidence pipeline. It does not prove unknown-bug autonomous reasoning.
+
+For true LLM repair:
+
+> This evaluates actual model-driven repair attempts using pytest telemetry and authorized source context. Successes and failures are preserved honestly.

@@ -4,6 +4,27 @@ Generated: 2026-05-19T23:29:57.805Z
 Root: `C:\DevNexusTargets\devnexus-repair-bench-1000-20260520070004`
 Seed: `devnexus-full-1000-v1`
 
+## Provenance Metadata
+
+| Field | Value |
+|---|---|
+| operatorAssistant | "Codex-assisted operation" |
+| repairSystem | "LEONA by DLG Labs" |
+| repairMode | "DETERMINISTIC_REPLAY" |
+| modelProvider | "not applicable" |
+| modelName | "not applicable" |
+| knownAnswerAccess | "deterministic replay fixture, not true LLM repair" |
+| executionRunner | "LEONA ExecutionRunner" |
+| telemetryGeneratedBy | "LEONA" |
+
+## Operator Disclosure
+
+Codex was used as a development/operator assistant to launch commands, inspect outputs, and guide repository maintenance. LEONA performed the governed repair benchmark execution through its own validation layer, rollback system, mutation constraints, and telemetry generation.
+
+## Claim Boundary
+
+This validates the benchmark harness, mutation boundaries, rollback system, telemetry, and evidence pipeline. It does not prove unknown-bug autonomous reasoning.
+
 ## Summary
 - Cases: 1000
 - Passed: 1000/1000

@@ -3,6 +3,27 @@
 Generated: 2026-05-20T00:09:03.616Z
 Root: `C:\DevNexusTargets\oss-repair-attempts-20260520073500`
 
+## Provenance Metadata
+
+| Field | Value |
+|---|---|
+| operatorAssistant | "Codex-assisted operation" |
+| repairSystem | "LEONA by DLG Labs" |
+| repairMode | "DETERMINISTIC_REPLAY" |
+| modelProvider | "not applicable" |
+| modelName | "not applicable" |
+| knownAnswerAccess | "deterministic replay fixture, not true LLM repair" |
+| executionRunner | "LEONA ExecutionRunner" |
+| telemetryGeneratedBy | "LEONA" |
+
+## Operator Disclosure
+
+Codex was used as a development/operator assistant to launch commands, inspect outputs, and guide repository maintenance. LEONA performed the governed repair benchmark execution through its own validation layer, rollback system, mutation constraints, and telemetry generation.
+
+## Claim Boundary
+
+This validates the benchmark harness, mutation boundaries, rollback system, telemetry, and evidence pipeline. It does not prove unknown-bug autonomous reasoning.
+
 ## Summary
 - Attempts: 5
 - Passed: 5/5

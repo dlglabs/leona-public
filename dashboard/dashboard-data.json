@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T02:09:35.889Z",
+  "generatedAt": "2026-05-20T03:31:37.365Z",
   "controlled": {
     "label": "LEONA Controlled 1,000-Case Repair Benchmark",
     "root": "C:\\DevNexusTargets\\devnexus-repair-bench-1000-20260520070004",
@@ -41748,50 +41748,50 @@
   },
   "llm": {
     "label": "True LLM OSS Mutation-Repair Validation",
-    "root": "C:\\DevNexusTargets\\oss-repair-attempts-llm-smoke-6",
+    "root": "C:\\DevNexusTargets\\oss-repair-attempts-50-true-llm-20260520101500",
     "repairMode": "true-llm",
     "provider": "ollama",
     "model": "qwen2.5-coder:14b",
-    "total": 5,
-    "passed": 1,
-    "failed": 4,
-    "convergenceSuccess": 1,
+    "total": 50,
+    "passed": 15,
+    "failed": 35,
+    "convergenceSuccess": 15,
     "unauthorizedMutationAttempts": 0,
     "testFilesModified": 0,
-    "rollbackEvents": 9,
-    "averageRepairDurationMs": 18059,
-    "hallucinatedPatchAttempts": 3,
-    "syntaxInvalidPatchCount": 0,
-    "convergenceRetries": 9,
-    "patchRejectionCount": 3,
+    "rollbackEvents": 48,
+    "averageRepairDurationMs": 14336,
+    "hallucinatedPatchAttempts": 42,
+    "syntaxInvalidPatchCount": 15,
+    "convergenceRetries": 48,
+    "patchRejectionCount": 57,
     "modelTokenUsage": {
-      "promptTokens": 27358,
-      "completionTokens": 2451,
-      "totalTokens": 29809
+      "promptTokens": 280293,
+      "completionTokens": 16319,
+      "totalTokens": 296612
     },
     "classifications": {
-      "PASS": 1,
-      "MODEL_LIMITATION": 4
+      "PASS": 15,
+      "MODEL_LIMITATION": 35
     },
     "retryDistribution": [
       {
         "retryCount": 1,
-        "count": 1
+        "count": 15
       },
       {
         "retryCount": 3,
-        "count": 4
+        "count": 35
       }
     ],
     "categories": [
       {
         "category": "PASS",
-        "total": 1,
-        "passed": 1
+        "total": 15,
+        "passed": 15
       },
       {
         "category": "MODEL_LIMITATION",
-        "total": 4,
+        "total": 35,
         "passed": 0
       }
     ],
@@ -41812,16 +41812,16 @@
         "hallucinatedPatchAttempts": 0,
         "syntaxInvalidPatchCount": 0,
         "unauthorizedMutationAttempts": 0,
-        "repairDurationMs": 7084,
+        "repairDurationMs": 11332,
         "filesChanged": [
           "toolz/itertoolz.py"
         ],
         "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_take_preserves_requested_count_variant_0 ________________\n    def test_take_preserves_requested_count_variant_0():\n        data = [\"atlas\",\"bloom\",\"cinder\"]\n>       assert list(take(1, data)) == data[:1]\nE       AssertionError: assert [] == ['atlas']\nE         \nE         Right contains one more item: 'atlas'\nE         Use -v to get more diff\nleona_contract_tests\\test_toolz_take_v0.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_take_v0.py::test_take_preserves_requested_count_variant_0\n1 failed in 0.04s",
         "afterSummary": ".                                                                        [100%]\n1 passed in 0.02s",
-        "baselineCommit": "c4f7a33",
-        "brokenCommit": "3059d32",
-        "repairCommit": "c81eceb",
-        "commitHash": "c81eceb",
+        "baselineCommit": "434c037",
+        "brokenCommit": "7028671",
+        "repairCommit": "da8b406",
+        "commitHash": "da8b406",
         "diff": "diff --git a/toolz/itertoolz.py b/toolz/itertoolz.py\nindex 2608f80..354ecf2 100644\n--- a/toolz/itertoolz.py\n+++ b/toolz/itertoolz.py\n@@ -319,7 +319,7 @@ def take(n, seq):\n         drop\n         tail\n     \"\"\"\n-    return itertools.islice(seq, max(0, n - 1))\n+    return itertools.islice(seq, n)\n \n \n def tail(n, seq):\n",
         "trace": [
           {
@@ -41830,7 +41830,7 @@
           },
           {
             "step": "induced failure",
-            "status": "failed as expected at 3059d32"
+            "status": "failed as expected at 7028671"
           },
           {
             "step": "llm repair",
@@ -41846,7 +41846,7 @@
           },
           {
             "step": "commit",
-            "status": "c81eceb"
+            "status": "da8b406"
           }
         ]
       },
@@ -41866,12 +41866,12 @@
         "hallucinatedPatchAttempts": 0,
         "syntaxInvalidPatchCount": 0,
         "unauthorizedMutationAttempts": 0,
-        "repairDurationMs": 14415,
+        "repairDurationMs": 14448,
         "filesChanged": [],
         "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_0 ___________________\n    def test_nth_uses_requested_index_variant_0():\n        data = [11,23,37,41,59,61,73]\n>       assert nth(1, data) == data[1]\nE       assert 11 == 23\nE        +  where 11 = nth(1, [11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v0.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v0.py::test_nth_uses_requested_index_variant_0\n1 failed in 0.04s",
-        "afterSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_0 ___________________\n    def test_nth_uses_requested_index_variant_0():\n        data = [11,23,37,41,59,61,73]\n        assert nth(1, data) == data[1]\n>       assert nth(1, iter(data)) == data[1]\nE       assert 11 == 23\nE        +  where 11 = nth(1, <list_iterator object at 0x000001D4A05D7F10>)\nE        +    where <list_iterator object at 0x000001D4A05D7F10> = iter([11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v0.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v0.py::test_nth_uses_requested_index_variant_0\n1 failed in 0.04s",
-        "baselineCommit": "70a95f8",
-        "brokenCommit": "3e6fac2",
+        "afterSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_0 ___________________\n    def test_nth_uses_requested_index_variant_0():\n        data = [11,23,37,41,59,61,73]\n        assert nth(1, data) == data[1]\n>       assert nth(1, iter(data)) == data[1]\nE       assert 11 == 23\nE        +  where 11 = nth(1, <list_iterator object at 0x0000024667E86EE0>)\nE        +    where <list_iterator object at 0x0000024667E86EE0> = iter([11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v0.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v0.py::test_nth_uses_requested_index_variant_0\n1 failed in 0.04s",
+        "baselineCommit": "b14e714",
+        "brokenCommit": "626320b",
         "repairCommit": "",
         "commitHash": "",
         "diff": "",
@@ -41882,7 +41882,7 @@
           },
           {
             "step": "induced failure",
-            "status": "failed as expected at 3e6fac2"
+            "status": "failed as expected at 626320b"
           },
           {
             "step": "llm repair",
@@ -41918,12 +41918,12 @@
         "hallucinatedPatchAttempts": 0,
         "syntaxInvalidPatchCount": 0,
         "unauthorizedMutationAttempts": 0,
-        "repairDurationMs": 20032,
+        "repairDurationMs": 20282,
         "filesChanged": [],
         "beforeSummary": "leona_contract_tests\\test_tqdm_disp_len_v0.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v0.py::test_disp_len_ignores_ansi_variant_0\n1 failed, 2 warnings in 0.04s",
         "afterSummary": "leona_contract_tests\\test_tqdm_disp_len_v0.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v0.py::test_disp_len_ignores_ansi_variant_0\n1 failed, 2 warnings in 0.04s",
-        "baselineCommit": "6d8f21c",
-        "brokenCommit": "4ade0a8",
+        "baselineCommit": "db334af",
+        "brokenCommit": "6afa494",
         "repairCommit": "",
         "commitHash": "",
         "diff": "",
@@ -41934,7 +41934,7 @@
           },
           {
             "step": "induced failure",
-            "status": "failed as expected at 4ade0a8"
+            "status": "failed as expected at 6afa494"
           },
           {
             "step": "llm repair",
@@ -41970,12 +41970,12 @@
         "hallucinatedPatchAttempts": 0,
         "syntaxInvalidPatchCount": 0,
         "unauthorizedMutationAttempts": 0,
-        "repairDurationMs": 22042,
+        "repairDurationMs": 21821,
         "filesChanged": [],
-        "beforeSummary": "leona_contract_tests\\test_tqdm_is_ascii_v0.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v0.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_0\n1 failed, 2 warnings in 0.04s",
+        "beforeSummary": "leona_contract_tests\\test_tqdm_is_ascii_v0.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v0.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_0\n1 failed, 2 warnings in 0.05s",
         "afterSummary": "leona_contract_tests\\test_tqdm_is_ascii_v0.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v0.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_0\n1 failed, 2 warnings in 0.04s",
-        "baselineCommit": "1d60026",
-        "brokenCommit": "096e89d",
+        "baselineCommit": "6cca723",
+        "brokenCommit": "2a36f45",
         "repairCommit": "",
         "commitHash": "",
         "diff": "",
@@ -41986,7 +41986,7 @@
           },
           {
             "step": "induced failure",
-            "status": "failed as expected at 096e89d"
+            "status": "failed as expected at 2a36f45"
           },
           {
             "step": "llm repair",
@@ -42022,12 +42022,12 @@
         "hallucinatedPatchAttempts": 3,
         "syntaxInvalidPatchCount": 0,
         "unauthorizedMutationAttempts": 0,
-        "repairDurationMs": 26722,
+        "repairDurationMs": 26966,
         "filesChanged": [],
         "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n____________________ test_sorted_list_membership_variant_0 ____________________\n    def test_sorted_list_membership_variant_0():\n        values = SortedList([1, 3, 5, 7])\n>       assert 5 in values\nE       assert 5 in SortedList([1, 3, 5, 7])\nleona_contract_tests\\test_sortedcontainers_membership_v0.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_membership_v0.py::test_sorted_list_membership_variant_0\n1 failed in 0.03s",
         "afterSummary": "",
-        "baselineCommit": "701a953",
-        "brokenCommit": "ba7ddca",
+        "baselineCommit": "93d47f7",
+        "brokenCommit": "f0da682",
         "repairCommit": "",
         "commitHash": "",
         "diff": "",
@@ -42038,7 +42038,2375 @@
           },
           {
             "step": "induced failure",
-            "status": "failed as expected at ba7ddca"
+            "status": "failed as expected at f0da682"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-6",
+        "name": "0006_sortedcontainers-bisect-left_v0",
+        "repo": "python-sortedcontainers",
+        "url": "https://github.com/grantjenks/python-sortedcontainers",
+        "source": "src/sortedcontainers/sortedlist.py",
+        "test": "leona_contract_tests/test_sortedcontainers_bisect_left_v0.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8185,
+        "filesChanged": [
+          "src/sortedcontainers/sortedlist.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_bisect_left_reports_left_insertion_index_variant_0 ___________\n    def test_bisect_left_reports_left_insertion_index_variant_0():\n        values = SortedList([10, 20, 30, 40])\n>       assert values.bisect_left(20) == 1\nE       assert 2 == 1\nE        +  where 2 = bisect_left(20)\nE        +    where bisect_left = SortedList([10, 20, 30, 40]).bisect_left\nleona_contract_tests\\test_sortedcontainers_bisect_left_v0.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_bisect_left_v0.py::test_bisect_left_reports_left_insertion_index_variant_0\n1 failed in 0.04s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "99325ba",
+        "brokenCommit": "3a63c92",
+        "repairCommit": "69debfe",
+        "commitHash": "69debfe",
+        "diff": "diff --git a/src/sortedcontainers/sortedlist.py b/src/sortedcontainers/sortedlist.py\nindex 1a74ed8..aecf787 100644\n--- a/src/sortedcontainers/sortedlist.py\n+++ b/src/sortedcontainers/sortedlist.py\n@@ -1111,7 +1111,7 @@ class SortedList(MutableSequence):\n             return self._len\n \n         idx = bisect_left(self._lists[pos], value)\n-        return self._loc(pos, idx) + 1\n+        return self._loc(pos, idx)\n \n     def bisect_right(self, value):\n         \"\"\"Return an index to insert `value` in the sorted list.\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 3a63c92"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "69debfe"
+          }
+        ]
+      },
+      {
+        "id": "llm-7",
+        "name": "0007_cachetools-get_v0",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_get_v0.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8626,
+        "filesChanged": [
+          "src/cachetools/__init__.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_cache_get_existing_and_missing_variant_0 ________________\n    def test_cache_get_existing_and_missing_variant_0():\n        cache = Cache(maxsize=10)\n        cache[\"alpha\"] = \"one\"\n>       assert cache.get(\"alpha\") == \"one\"\nE       AssertionError: assert None == 'one'\nE        +  where None = get('alpha')\nE        +    where get = Cache({'alpha': 'one'}, maxsize=10, currsize=1).get\nleona_contract_tests\\test_cachetools_get_v0.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_get_v0.py::test_cache_get_existing_and_missing_variant_0\n1 failed in 0.03s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "421d7fe",
+        "brokenCommit": "644a73a",
+        "repairCommit": "2d6d50a",
+        "commitHash": "2d6d50a",
+        "diff": "diff --git a/src/cachetools/__init__.py b/src/cachetools/__init__.py\nindex bdd6952..8d9b7a1 100644\n--- a/src/cachetools/__init__.py\n+++ b/src/cachetools/__init__.py\n@@ -112,7 +112,10 @@ class Cache(collections.abc.MutableMapping):\n     # somewhat less elegant versions.\n \n     def get(self, key, default=None):\n-        return default\n+        try:\n+            return self.__data[key]\n+        except KeyError:\n+            return default\n \n     def pop(self, key, default=__marker):\n         if key in self:\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 644a73a"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "2d6d50a"
+          }
+        ]
+      },
+      {
+        "id": "llm-8",
+        "name": "0008_cachetools-setdefault_v0",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_setdefault_v0.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 3,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 16899,
+        "filesChanged": [],
+        "beforeSummary": "================================== FAILURES ===================================\n_____________ test_cache_setdefault_preserves_existing_variant_0 ______________\n    def test_cache_setdefault_preserves_existing_variant_0():\n        cache = Cache(maxsize=10)\n        cache[\"north\"] = \"original\"\n>       assert cache.setdefault(\"north\", \"replacement\") == \"original\"\nE       AssertionError: assert 'replacement' == 'original'\nE         \nE         - original\nE         + replacement\nleona_contract_tests\\test_cachetools_setdefault_v0.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_setdefault_v0.py::test_cache_setdefault_preserves_existing_variant_0\n1 failed in 0.03s",
+        "afterSummary": "",
+        "baselineCommit": "a425734",
+        "brokenCommit": "674eb26",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 674eb26"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-9",
+        "name": "0009_boltons-first_v0",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_first_v0.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 14380,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_first_returns_first_truthy_or_key_match_variant_0 ____________\n    def test_first_returns_first_truthy_or_key_match_variant_0():\n>       assert first([0, None, \"\", \"ready\", \"later\"]) == \"ready\"\nE       AssertionError: assert None == 'ready'\nE        +  where None = first([0, None, '', 'ready', 'later'])\nleona_contract_tests\\test_boltons_first_v0.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_first_v0.py::test_first_returns_first_truthy_or_key_match_variant_0\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "bb09ce6",
+        "brokenCommit": "ed0ff79",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at ed0ff79"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-10",
+        "name": "0010_boltons-same_v0",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_same_v0.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 11798,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_same_detects_uniform_iterables_variant_0 ________________\n    def test_same_detects_uniform_iterables_variant_0():\n>       assert same([\"ion\", \"ion\", \"ion\"]) is True\nE       AssertionError: assert False is True\nE        +  where False = same(['ion', 'ion', 'ion'])\nleona_contract_tests\\test_boltons_same_v0.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_same_v0.py::test_same_detects_uniform_iterables_variant_0\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "f96078e",
+        "brokenCommit": "a7b2fcf",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at a7b2fcf"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-11",
+        "name": "0011_toolz-take_v1",
+        "repo": "toolz",
+        "url": "https://github.com/pytoolz/toolz",
+        "source": "toolz/itertoolz.py",
+        "test": "leona_contract_tests/test_toolz_take_v1.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 7286,
+        "filesChanged": [
+          "toolz/itertoolz.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_take_preserves_requested_count_variant_1 ________________\n    def test_take_preserves_requested_count_variant_1():\n        data = [\"atlas\",\"bloom\",\"cinder\",\"drift\"]\n>       assert list(take(2, data)) == data[:2]\nE       AssertionError: assert ['atlas'] == ['atlas', 'bloom']\nE         \nE         Right contains one more item: 'bloom'\nE         Use -v to get more diff\nleona_contract_tests\\test_toolz_take_v1.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_take_v1.py::test_take_preserves_requested_count_variant_1\n1 failed in 0.04s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.02s",
+        "baselineCommit": "1c04ae0",
+        "brokenCommit": "03a2732",
+        "repairCommit": "2c89c40",
+        "commitHash": "2c89c40",
+        "diff": "diff --git a/toolz/itertoolz.py b/toolz/itertoolz.py\nindex 2608f80..354ecf2 100644\n--- a/toolz/itertoolz.py\n+++ b/toolz/itertoolz.py\n@@ -319,7 +319,7 @@ def take(n, seq):\n         drop\n         tail\n     \"\"\"\n-    return itertools.islice(seq, max(0, n - 1))\n+    return itertools.islice(seq, n)\n \n \n def tail(n, seq):\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 03a2732"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "2c89c40"
+          }
+        ]
+      },
+      {
+        "id": "llm-12",
+        "name": "0012_toolz-nth_v1",
+        "repo": "toolz",
+        "url": "https://github.com/pytoolz/toolz",
+        "source": "toolz/itertoolz.py",
+        "test": "leona_contract_tests/test_toolz_nth_v1.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 14723,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_1 ___________________\n    def test_nth_uses_requested_index_variant_1():\n        data = [11,23,37,41,59,61,73]\n>       assert nth(2, data) == data[2]\nE       assert 11 == 37\nE        +  where 11 = nth(2, [11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v1.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v1.py::test_nth_uses_requested_index_variant_1\n1 failed in 0.04s",
+        "afterSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_1 ___________________\n    def test_nth_uses_requested_index_variant_1():\n        data = [11,23,37,41,59,61,73]\n        assert nth(2, data) == data[2]\n>       assert nth(2, iter(data)) == data[2]\nE       assert 11 == 37\nE        +  where 11 = nth(2, <list_iterator object at 0x000001E712775F10>)\nE        +    where <list_iterator object at 0x000001E712775F10> = iter([11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v1.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v1.py::test_nth_uses_requested_index_variant_1\n1 failed in 0.04s",
+        "baselineCommit": "381ccba",
+        "brokenCommit": "215837c",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 215837c"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-13",
+        "name": "0013_tqdm-disp-len_v1",
+        "repo": "tqdm",
+        "url": "https://github.com/tqdm/tqdm",
+        "source": "tqdm/utils.py",
+        "test": "leona_contract_tests/test_tqdm_disp_len_v1.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 20444,
+        "filesChanged": [],
+        "beforeSummary": "leona_contract_tests\\test_tqdm_disp_len_v1.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v1.py::test_disp_len_ignores_ansi_variant_1\n1 failed, 2 warnings in 0.04s",
+        "afterSummary": "leona_contract_tests\\test_tqdm_disp_len_v1.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v1.py::test_disp_len_ignores_ansi_variant_1\n1 failed, 2 warnings in 0.05s",
+        "baselineCommit": "cd9eed9",
+        "brokenCommit": "6f82e92",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 6f82e92"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-14",
+        "name": "0014_tqdm-is-ascii_v1",
+        "repo": "tqdm",
+        "url": "https://github.com/tqdm/tqdm",
+        "source": "tqdm/utils.py",
+        "test": "leona_contract_tests/test_tqdm_is_ascii_v1.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 16555,
+        "filesChanged": [],
+        "beforeSummary": "leona_contract_tests\\test_tqdm_is_ascii_v1.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v1.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_1\n1 failed, 2 warnings in 0.04s",
+        "afterSummary": "leona_contract_tests\\test_tqdm_is_ascii_v1.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v1.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_1\n1 failed, 2 warnings in 0.04s",
+        "baselineCommit": "805c9cd",
+        "brokenCommit": "a7b6cfe",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at a7b6cfe"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-15",
+        "name": "0015_sortedcontainers-membership_v1",
+        "repo": "python-sortedcontainers",
+        "url": "https://github.com/grantjenks/python-sortedcontainers",
+        "source": "src/sortedcontainers/sortedlist.py",
+        "test": "leona_contract_tests/test_sortedcontainers_membership_v1.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 13579,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n____________________ test_sorted_list_membership_variant_1 ____________________\n    def test_sorted_list_membership_variant_1():\n        values = SortedList([11, 13, 15, 17])\n>       assert 15 in values\nE       assert 15 in SortedList([11, 13, 15, 17])\nleona_contract_tests\\test_sortedcontainers_membership_v1.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_membership_v1.py::test_sorted_list_membership_variant_1\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "74d7361",
+        "brokenCommit": "6cca59c",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 6cca59c"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-16",
+        "name": "0016_sortedcontainers-bisect-left_v1",
+        "repo": "python-sortedcontainers",
+        "url": "https://github.com/grantjenks/python-sortedcontainers",
+        "source": "src/sortedcontainers/sortedlist.py",
+        "test": "leona_contract_tests/test_sortedcontainers_bisect_left_v1.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8258,
+        "filesChanged": [
+          "src/sortedcontainers/sortedlist.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_bisect_left_reports_left_insertion_index_variant_1 ___________\n    def test_bisect_left_reports_left_insertion_index_variant_1():\n        values = SortedList([15, 25, 35, 45])\n>       assert values.bisect_left(25) == 1\nE       assert 2 == 1\nE        +  where 2 = bisect_left(25)\nE        +    where bisect_left = SortedList([15, 25, 35, 45]).bisect_left\nleona_contract_tests\\test_sortedcontainers_bisect_left_v1.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_bisect_left_v1.py::test_bisect_left_reports_left_insertion_index_variant_1\n1 failed in 0.04s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "1a16a4a",
+        "brokenCommit": "8d77467",
+        "repairCommit": "ed23752",
+        "commitHash": "ed23752",
+        "diff": "diff --git a/src/sortedcontainers/sortedlist.py b/src/sortedcontainers/sortedlist.py\nindex 1a74ed8..aecf787 100644\n--- a/src/sortedcontainers/sortedlist.py\n+++ b/src/sortedcontainers/sortedlist.py\n@@ -1111,7 +1111,7 @@ class SortedList(MutableSequence):\n             return self._len\n \n         idx = bisect_left(self._lists[pos], value)\n-        return self._loc(pos, idx) + 1\n+        return self._loc(pos, idx)\n \n     def bisect_right(self, value):\n         \"\"\"Return an index to insert `value` in the sorted list.\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 8d77467"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "ed23752"
+          }
+        ]
+      },
+      {
+        "id": "llm-17",
+        "name": "0017_cachetools-get_v1",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_get_v1.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8665,
+        "filesChanged": [
+          "src/cachetools/__init__.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_cache_get_existing_and_missing_variant_1 ________________\n    def test_cache_get_existing_and_missing_variant_1():\n        cache = Cache(maxsize=10)\n        cache[\"bravo\"] = \"two\"\n>       assert cache.get(\"bravo\") == \"two\"\nE       AssertionError: assert None == 'two'\nE        +  where None = get('bravo')\nE        +    where get = Cache({'bravo': 'two'}, maxsize=10, currsize=1).get\nleona_contract_tests\\test_cachetools_get_v1.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_get_v1.py::test_cache_get_existing_and_missing_variant_1\n1 failed in 0.03s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "d138f64",
+        "brokenCommit": "43b1a5c",
+        "repairCommit": "48854cc",
+        "commitHash": "48854cc",
+        "diff": "diff --git a/src/cachetools/__init__.py b/src/cachetools/__init__.py\nindex bdd6952..8d9b7a1 100644\n--- a/src/cachetools/__init__.py\n+++ b/src/cachetools/__init__.py\n@@ -112,7 +112,10 @@ class Cache(collections.abc.MutableMapping):\n     # somewhat less elegant versions.\n \n     def get(self, key, default=None):\n-        return default\n+        try:\n+            return self.__data[key]\n+        except KeyError:\n+            return default\n \n     def pop(self, key, default=__marker):\n         if key in self:\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 43b1a5c"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "48854cc"
+          }
+        ]
+      },
+      {
+        "id": "llm-18",
+        "name": "0018_cachetools-setdefault_v1",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_setdefault_v1.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 3,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 16583,
+        "filesChanged": [],
+        "beforeSummary": "================================== FAILURES ===================================\n_____________ test_cache_setdefault_preserves_existing_variant_1 ______________\n    def test_cache_setdefault_preserves_existing_variant_1():\n        cache = Cache(maxsize=10)\n        cache[\"south\"] = \"original\"\n>       assert cache.setdefault(\"south\", \"replacement\") == \"original\"\nE       AssertionError: assert 'replacement' == 'original'\nE         \nE         - original\nE         + replacement\nleona_contract_tests\\test_cachetools_setdefault_v1.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_setdefault_v1.py::test_cache_setdefault_preserves_existing_variant_1\n1 failed in 0.03s",
+        "afterSummary": "",
+        "baselineCommit": "16f2147",
+        "brokenCommit": "002407f",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 002407f"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-19",
+        "name": "0019_boltons-first_v1",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_first_v1.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 14156,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_first_returns_first_truthy_or_key_match_variant_1 ____________\n    def test_first_returns_first_truthy_or_key_match_variant_1():\n>       assert first([0, None, \"\", \"set\", \"later\"]) == \"set\"\nE       AssertionError: assert None == 'set'\nE        +  where None = first([0, None, '', 'set', 'later'])\nleona_contract_tests\\test_boltons_first_v1.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_first_v1.py::test_first_returns_first_truthy_or_key_match_variant_1\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "a03a77d",
+        "brokenCommit": "99b5963",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 99b5963"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-20",
+        "name": "0020_boltons-same_v1",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_same_v1.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 11849,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_same_detects_uniform_iterables_variant_1 ________________\n    def test_same_detects_uniform_iterables_variant_1():\n>       assert same([\"juno\", \"juno\", \"juno\"]) is True\nE       AssertionError: assert False is True\nE        +  where False = same(['juno', 'juno', 'juno'])\nleona_contract_tests\\test_boltons_same_v1.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_same_v1.py::test_same_detects_uniform_iterables_variant_1\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "0081a38",
+        "brokenCommit": "1ce5ba1",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 1ce5ba1"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-21",
+        "name": "0021_toolz-take_v2",
+        "repo": "toolz",
+        "url": "https://github.com/pytoolz/toolz",
+        "source": "toolz/itertoolz.py",
+        "test": "leona_contract_tests/test_toolz_take_v2.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 7272,
+        "filesChanged": [
+          "toolz/itertoolz.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_take_preserves_requested_count_variant_2 ________________\n    def test_take_preserves_requested_count_variant_2():\n        data = [\"atlas\",\"bloom\",\"cinder\",\"drift\",\"ember\"]\n>       assert list(take(3, data)) == data[:3]\nE       AssertionError: assert ['atlas', 'bloom'] == ['atlas', 'bloom', 'cinder']\nE         \nE         Right contains one more item: 'cinder'\nE         Use -v to get more diff\nleona_contract_tests\\test_toolz_take_v2.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_take_v2.py::test_take_preserves_requested_count_variant_2\n1 failed in 0.04s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.02s",
+        "baselineCommit": "fde0c43",
+        "brokenCommit": "09cf9bc",
+        "repairCommit": "078675e",
+        "commitHash": "078675e",
+        "diff": "diff --git a/toolz/itertoolz.py b/toolz/itertoolz.py\nindex 2608f80..354ecf2 100644\n--- a/toolz/itertoolz.py\n+++ b/toolz/itertoolz.py\n@@ -319,7 +319,7 @@ def take(n, seq):\n         drop\n         tail\n     \"\"\"\n-    return itertools.islice(seq, max(0, n - 1))\n+    return itertools.islice(seq, n)\n \n \n def tail(n, seq):\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 09cf9bc"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "078675e"
+          }
+        ]
+      },
+      {
+        "id": "llm-22",
+        "name": "0022_toolz-nth_v2",
+        "repo": "toolz",
+        "url": "https://github.com/pytoolz/toolz",
+        "source": "toolz/itertoolz.py",
+        "test": "leona_contract_tests/test_toolz_nth_v2.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 14404,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_2 ___________________\n    def test_nth_uses_requested_index_variant_2():\n        data = [11,23,37,41,59,61,73]\n>       assert nth(3, data) == data[3]\nE       assert 11 == 41\nE        +  where 11 = nth(3, [11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v2.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v2.py::test_nth_uses_requested_index_variant_2\n1 failed in 0.04s",
+        "afterSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_2 ___________________\n    def test_nth_uses_requested_index_variant_2():\n        data = [11,23,37,41,59,61,73]\n        assert nth(3, data) == data[3]\n>       assert nth(3, iter(data)) == data[3]\nE       assert 11 == 41\nE        +  where 11 = nth(3, <list_iterator object at 0x000001A9DB186EE0>)\nE        +    where <list_iterator object at 0x000001A9DB186EE0> = iter([11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v2.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v2.py::test_nth_uses_requested_index_variant_2\n1 failed in 0.04s",
+        "baselineCommit": "6a88eb9",
+        "brokenCommit": "69b1e6a",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 69b1e6a"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-23",
+        "name": "0023_tqdm-disp-len_v2",
+        "repo": "tqdm",
+        "url": "https://github.com/tqdm/tqdm",
+        "source": "tqdm/utils.py",
+        "test": "leona_contract_tests/test_tqdm_disp_len_v2.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 20876,
+        "filesChanged": [],
+        "beforeSummary": "leona_contract_tests\\test_tqdm_disp_len_v2.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v2.py::test_disp_len_ignores_ansi_variant_2\n1 failed, 2 warnings in 0.05s",
+        "afterSummary": "leona_contract_tests\\test_tqdm_disp_len_v2.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v2.py::test_disp_len_ignores_ansi_variant_2\n1 failed, 2 warnings in 0.04s",
+        "baselineCommit": "df00139",
+        "brokenCommit": "76e8c64",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 76e8c64"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-24",
+        "name": "0024_tqdm-is-ascii_v2",
+        "repo": "tqdm",
+        "url": "https://github.com/tqdm/tqdm",
+        "source": "tqdm/utils.py",
+        "test": "leona_contract_tests/test_tqdm_is_ascii_v2.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 21981,
+        "filesChanged": [],
+        "beforeSummary": "leona_contract_tests\\test_tqdm_is_ascii_v2.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v2.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_2\n1 failed, 2 warnings in 0.04s",
+        "afterSummary": "leona_contract_tests\\test_tqdm_is_ascii_v2.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v2.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_2\n1 failed, 2 warnings in 0.04s",
+        "baselineCommit": "5a9412b",
+        "brokenCommit": "2ffeb9e",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 2ffeb9e"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-25",
+        "name": "0025_sortedcontainers-membership_v2",
+        "repo": "python-sortedcontainers",
+        "url": "https://github.com/grantjenks/python-sortedcontainers",
+        "source": "src/sortedcontainers/sortedlist.py",
+        "test": "leona_contract_tests/test_sortedcontainers_membership_v2.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 15998,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n____________________ test_sorted_list_membership_variant_2 ____________________\n    def test_sorted_list_membership_variant_2():\n        values = SortedList([21, 23, 25, 27])\n>       assert 25 in values\nE       assert 25 in SortedList([21, 23, 25, 27])\nleona_contract_tests\\test_sortedcontainers_membership_v2.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_membership_v2.py::test_sorted_list_membership_variant_2\n1 failed in 0.04s",
+        "afterSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n____________________ test_sorted_list_membership_variant_2 ____________________\n    def test_sorted_list_membership_variant_2():\n        values = SortedList([21, 23, 25, 27])\n>       assert 25 in values\nE       assert 25 in SortedList([21, 23, 25, 27])\nleona_contract_tests\\test_sortedcontainers_membership_v2.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_membership_v2.py::test_sorted_list_membership_variant_2\n1 failed in 0.04s",
+        "baselineCommit": "475ffa5",
+        "brokenCommit": "bb99c9c",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at bb99c9c"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-26",
+        "name": "0026_sortedcontainers-bisect-left_v2",
+        "repo": "python-sortedcontainers",
+        "url": "https://github.com/grantjenks/python-sortedcontainers",
+        "source": "src/sortedcontainers/sortedlist.py",
+        "test": "leona_contract_tests/test_sortedcontainers_bisect_left_v2.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8247,
+        "filesChanged": [
+          "src/sortedcontainers/sortedlist.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_bisect_left_reports_left_insertion_index_variant_2 ___________\n    def test_bisect_left_reports_left_insertion_index_variant_2():\n        values = SortedList([20, 30, 40, 50])\n>       assert values.bisect_left(30) == 1\nE       assert 2 == 1\nE        +  where 2 = bisect_left(30)\nE        +    where bisect_left = SortedList([20, 30, 40, 50]).bisect_left\nleona_contract_tests\\test_sortedcontainers_bisect_left_v2.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_bisect_left_v2.py::test_bisect_left_reports_left_insertion_index_variant_2\n1 failed in 0.04s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "f59942b",
+        "brokenCommit": "00f8ebf",
+        "repairCommit": "bc5f83d",
+        "commitHash": "bc5f83d",
+        "diff": "diff --git a/src/sortedcontainers/sortedlist.py b/src/sortedcontainers/sortedlist.py\nindex 1a74ed8..aecf787 100644\n--- a/src/sortedcontainers/sortedlist.py\n+++ b/src/sortedcontainers/sortedlist.py\n@@ -1111,7 +1111,7 @@ class SortedList(MutableSequence):\n             return self._len\n \n         idx = bisect_left(self._lists[pos], value)\n-        return self._loc(pos, idx) + 1\n+        return self._loc(pos, idx)\n \n     def bisect_right(self, value):\n         \"\"\"Return an index to insert `value` in the sorted list.\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 00f8ebf"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "bc5f83d"
+          }
+        ]
+      },
+      {
+        "id": "llm-27",
+        "name": "0027_cachetools-get_v2",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_get_v2.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8859,
+        "filesChanged": [
+          "src/cachetools/__init__.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_cache_get_existing_and_missing_variant_2 ________________\n    def test_cache_get_existing_and_missing_variant_2():\n        cache = Cache(maxsize=10)\n        cache[\"charlie\"] = \"three\"\n>       assert cache.get(\"charlie\") == \"three\"\nE       AssertionError: assert None == 'three'\nE        +  where None = get('charlie')\nE        +    where get = Cache({'charlie': 'three'}, maxsize=10, currsize=1).get\nleona_contract_tests\\test_cachetools_get_v2.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_get_v2.py::test_cache_get_existing_and_missing_variant_2\n1 failed in 0.03s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "9c4089f",
+        "brokenCommit": "6b9b936",
+        "repairCommit": "3751f01",
+        "commitHash": "3751f01",
+        "diff": "diff --git a/src/cachetools/__init__.py b/src/cachetools/__init__.py\nindex bdd6952..8d9b7a1 100644\n--- a/src/cachetools/__init__.py\n+++ b/src/cachetools/__init__.py\n@@ -112,7 +112,10 @@ class Cache(collections.abc.MutableMapping):\n     # somewhat less elegant versions.\n \n     def get(self, key, default=None):\n-        return default\n+        try:\n+            return self.__data[key]\n+        except KeyError:\n+            return default\n \n     def pop(self, key, default=__marker):\n         if key in self:\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 6b9b936"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "3751f01"
+          }
+        ]
+      },
+      {
+        "id": "llm-28",
+        "name": "0028_cachetools-setdefault_v2",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_setdefault_v2.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 3,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 16202,
+        "filesChanged": [],
+        "beforeSummary": "================================== FAILURES ===================================\n_____________ test_cache_setdefault_preserves_existing_variant_2 ______________\n    def test_cache_setdefault_preserves_existing_variant_2():\n        cache = Cache(maxsize=10)\n        cache[\"east\"] = \"original\"\n>       assert cache.setdefault(\"east\", \"replacement\") == \"original\"\nE       AssertionError: assert 'replacement' == 'original'\nE         \nE         - original\nE         + replacement\nleona_contract_tests\\test_cachetools_setdefault_v2.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_setdefault_v2.py::test_cache_setdefault_preserves_existing_variant_2\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "6011e0a",
+        "brokenCommit": "501e047",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 501e047"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-29",
+        "name": "0029_boltons-first_v2",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_first_v2.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 14051,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_first_returns_first_truthy_or_key_match_variant_2 ____________\n    def test_first_returns_first_truthy_or_key_match_variant_2():\n>       assert first([0, None, \"\", \"go\", \"later\"]) == \"go\"\nE       AssertionError: assert None == 'go'\nE        +  where None = first([0, None, '', 'go', 'later'])\nleona_contract_tests\\test_boltons_first_v2.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_first_v2.py::test_first_returns_first_truthy_or_key_match_variant_2\n1 failed in 0.05s",
+        "afterSummary": "",
+        "baselineCommit": "671b94c",
+        "brokenCommit": "5299d9a",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 5299d9a"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-30",
+        "name": "0030_boltons-same_v2",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_same_v2.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 11323,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_same_detects_uniform_iterables_variant_2 ________________\n    def test_same_detects_uniform_iterables_variant_2():\n>       assert same([\"kilo\", \"kilo\", \"kilo\"]) is True\nE       AssertionError: assert False is True\nE        +  where False = same(['kilo', 'kilo', 'kilo'])\nleona_contract_tests\\test_boltons_same_v2.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_same_v2.py::test_same_detects_uniform_iterables_variant_2\n1 failed in 0.05s",
+        "afterSummary": "",
+        "baselineCommit": "edec6b9",
+        "brokenCommit": "7940fec",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 7940fec"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-31",
+        "name": "0031_toolz-take_v3",
+        "repo": "toolz",
+        "url": "https://github.com/pytoolz/toolz",
+        "source": "toolz/itertoolz.py",
+        "test": "leona_contract_tests/test_toolz_take_v3.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 6977,
+        "filesChanged": [
+          "toolz/itertoolz.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_take_preserves_requested_count_variant_3 ________________\n    def test_take_preserves_requested_count_variant_3():\n        data = [\"atlas\",\"bloom\",\"cinder\",\"drift\",\"ember\",\"forge\"]\n>       assert list(take(4, data)) == data[:4]\nE       AssertionError: assert ['atlas', 'bloom', 'cinder'] == ['atlas', 'bl...der', 'drift']\nE         \nE         Right contains one more item: 'drift'\nE         Use -v to get more diff\nleona_contract_tests\\test_toolz_take_v3.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_take_v3.py::test_take_preserves_requested_count_variant_3\n1 failed in 0.04s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.02s",
+        "baselineCommit": "f88fc99",
+        "brokenCommit": "75cb091",
+        "repairCommit": "4616cbe",
+        "commitHash": "4616cbe",
+        "diff": "diff --git a/toolz/itertoolz.py b/toolz/itertoolz.py\nindex 2608f80..354ecf2 100644\n--- a/toolz/itertoolz.py\n+++ b/toolz/itertoolz.py\n@@ -319,7 +319,7 @@ def take(n, seq):\n         drop\n         tail\n     \"\"\"\n-    return itertools.islice(seq, max(0, n - 1))\n+    return itertools.islice(seq, n)\n \n \n def tail(n, seq):\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 75cb091"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "4616cbe"
+          }
+        ]
+      },
+      {
+        "id": "llm-32",
+        "name": "0032_toolz-nth_v3",
+        "repo": "toolz",
+        "url": "https://github.com/pytoolz/toolz",
+        "source": "toolz/itertoolz.py",
+        "test": "leona_contract_tests/test_toolz_nth_v3.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 14866,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_3 ___________________\n    def test_nth_uses_requested_index_variant_3():\n        data = [11,23,37,41,59,61,73]\n>       assert nth(4, data) == data[4]\nE       assert 11 == 59\nE        +  where 11 = nth(4, [11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v3.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v3.py::test_nth_uses_requested_index_variant_3\n1 failed in 0.04s",
+        "afterSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_3 ___________________\n    def test_nth_uses_requested_index_variant_3():\n        data = [11,23,37,41,59,61,73]\n        assert nth(4, data) == data[4]\n>       assert nth(4, iter(data)) == data[4]\nE       assert 11 == 59\nE        +  where 11 = nth(4, <list_iterator object at 0x0000023202157F40>)\nE        +    where <list_iterator object at 0x0000023202157F40> = iter([11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v3.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v3.py::test_nth_uses_requested_index_variant_3\n1 failed in 0.04s",
+        "baselineCommit": "d8b475d",
+        "brokenCommit": "b7eb08c",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at b7eb08c"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-33",
+        "name": "0033_tqdm-disp-len_v3",
+        "repo": "tqdm",
+        "url": "https://github.com/tqdm/tqdm",
+        "source": "tqdm/utils.py",
+        "test": "leona_contract_tests/test_tqdm_disp_len_v3.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 20746,
+        "filesChanged": [],
+        "beforeSummary": "leona_contract_tests\\test_tqdm_disp_len_v3.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v3.py::test_disp_len_ignores_ansi_variant_3\n1 failed, 2 warnings in 0.04s",
+        "afterSummary": "leona_contract_tests\\test_tqdm_disp_len_v3.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v3.py::test_disp_len_ignores_ansi_variant_3\n1 failed, 2 warnings in 0.04s",
+        "baselineCommit": "ffc29af",
+        "brokenCommit": "67930a4",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 67930a4"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-34",
+        "name": "0034_tqdm-is-ascii_v3",
+        "repo": "tqdm",
+        "url": "https://github.com/tqdm/tqdm",
+        "source": "tqdm/utils.py",
+        "test": "leona_contract_tests/test_tqdm_is_ascii_v3.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 21204,
+        "filesChanged": [],
+        "beforeSummary": "leona_contract_tests\\test_tqdm_is_ascii_v3.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v3.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_3\n1 failed, 2 warnings in 0.04s",
+        "afterSummary": "leona_contract_tests\\test_tqdm_is_ascii_v3.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v3.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_3\n1 failed, 2 warnings in 0.04s",
+        "baselineCommit": "e94f48d",
+        "brokenCommit": "3cf935c",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 3cf935c"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-35",
+        "name": "0035_sortedcontainers-membership_v3",
+        "repo": "python-sortedcontainers",
+        "url": "https://github.com/grantjenks/python-sortedcontainers",
+        "source": "src/sortedcontainers/sortedlist.py",
+        "test": "leona_contract_tests/test_sortedcontainers_membership_v3.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 25077,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n____________________ test_sorted_list_membership_variant_3 ____________________\n    def test_sorted_list_membership_variant_3():\n        values = SortedList([31, 33, 35, 37])\n>       assert 35 in values\nE       assert 35 in SortedList([31, 33, 35, 37])\nleona_contract_tests\\test_sortedcontainers_membership_v3.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_membership_v3.py::test_sorted_list_membership_variant_3\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "fc2fe24",
+        "brokenCommit": "c620df1",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at c620df1"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-36",
+        "name": "0036_sortedcontainers-bisect-left_v3",
+        "repo": "python-sortedcontainers",
+        "url": "https://github.com/grantjenks/python-sortedcontainers",
+        "source": "src/sortedcontainers/sortedlist.py",
+        "test": "leona_contract_tests/test_sortedcontainers_bisect_left_v3.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8186,
+        "filesChanged": [
+          "src/sortedcontainers/sortedlist.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_bisect_left_reports_left_insertion_index_variant_3 ___________\n    def test_bisect_left_reports_left_insertion_index_variant_3():\n        values = SortedList([25, 35, 45, 55])\n>       assert values.bisect_left(35) == 1\nE       assert 2 == 1\nE        +  where 2 = bisect_left(35)\nE        +    where bisect_left = SortedList([25, 35, 45, 55]).bisect_left\nleona_contract_tests\\test_sortedcontainers_bisect_left_v3.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_bisect_left_v3.py::test_bisect_left_reports_left_insertion_index_variant_3\n1 failed in 0.04s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "8c9742a",
+        "brokenCommit": "177c08d",
+        "repairCommit": "a861a43",
+        "commitHash": "a861a43",
+        "diff": "diff --git a/src/sortedcontainers/sortedlist.py b/src/sortedcontainers/sortedlist.py\nindex 1a74ed8..aecf787 100644\n--- a/src/sortedcontainers/sortedlist.py\n+++ b/src/sortedcontainers/sortedlist.py\n@@ -1111,7 +1111,7 @@ class SortedList(MutableSequence):\n             return self._len\n \n         idx = bisect_left(self._lists[pos], value)\n-        return self._loc(pos, idx) + 1\n+        return self._loc(pos, idx)\n \n     def bisect_right(self, value):\n         \"\"\"Return an index to insert `value` in the sorted list.\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 177c08d"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "a861a43"
+          }
+        ]
+      },
+      {
+        "id": "llm-37",
+        "name": "0037_cachetools-get_v3",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_get_v3.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8658,
+        "filesChanged": [
+          "src/cachetools/__init__.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_cache_get_existing_and_missing_variant_3 ________________\n    def test_cache_get_existing_and_missing_variant_3():\n        cache = Cache(maxsize=10)\n        cache[\"delta\"] = \"four\"\n>       assert cache.get(\"delta\") == \"four\"\nE       AssertionError: assert None == 'four'\nE        +  where None = get('delta')\nE        +    where get = Cache({'delta': 'four'}, maxsize=10, currsize=1).get\nleona_contract_tests\\test_cachetools_get_v3.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_get_v3.py::test_cache_get_existing_and_missing_variant_3\n1 failed in 0.03s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "4d98919",
+        "brokenCommit": "cdf48b7",
+        "repairCommit": "4cd8b35",
+        "commitHash": "4cd8b35",
+        "diff": "diff --git a/src/cachetools/__init__.py b/src/cachetools/__init__.py\nindex bdd6952..8d9b7a1 100644\n--- a/src/cachetools/__init__.py\n+++ b/src/cachetools/__init__.py\n@@ -112,7 +112,10 @@ class Cache(collections.abc.MutableMapping):\n     # somewhat less elegant versions.\n \n     def get(self, key, default=None):\n-        return default\n+        try:\n+            return self.__data[key]\n+        except KeyError:\n+            return default\n \n     def pop(self, key, default=__marker):\n         if key in self:\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at cdf48b7"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "4cd8b35"
+          }
+        ]
+      },
+      {
+        "id": "llm-38",
+        "name": "0038_cachetools-setdefault_v3",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_setdefault_v3.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 3,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 16691,
+        "filesChanged": [],
+        "beforeSummary": "================================== FAILURES ===================================\n_____________ test_cache_setdefault_preserves_existing_variant_3 ______________\n    def test_cache_setdefault_preserves_existing_variant_3():\n        cache = Cache(maxsize=10)\n        cache[\"west\"] = \"original\"\n>       assert cache.setdefault(\"west\", \"replacement\") == \"original\"\nE       AssertionError: assert 'replacement' == 'original'\nE         \nE         - original\nE         + replacement\nleona_contract_tests\\test_cachetools_setdefault_v3.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_setdefault_v3.py::test_cache_setdefault_preserves_existing_variant_3\n1 failed in 0.03s",
+        "afterSummary": "",
+        "baselineCommit": "ddc90cb",
+        "brokenCommit": "252019d",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 252019d"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-39",
+        "name": "0039_boltons-first_v3",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_first_v3.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 14151,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_first_returns_first_truthy_or_key_match_variant_3 ____________\n    def test_first_returns_first_truthy_or_key_match_variant_3():\n>       assert first([0, None, \"\", \"ship\", \"later\"]) == \"ship\"\nE       AssertionError: assert None == 'ship'\nE        +  where None = first([0, None, '', 'ship', 'later'])\nleona_contract_tests\\test_boltons_first_v3.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_first_v3.py::test_first_returns_first_truthy_or_key_match_variant_3\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "4b4a3e7",
+        "brokenCommit": "16925cd",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 16925cd"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-40",
+        "name": "0040_boltons-same_v3",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_same_v3.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 11860,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_same_detects_uniform_iterables_variant_3 ________________\n    def test_same_detects_uniform_iterables_variant_3():\n>       assert same([\"lumen\", \"lumen\", \"lumen\"]) is True\nE       AssertionError: assert False is True\nE        +  where False = same(['lumen', 'lumen', 'lumen'])\nleona_contract_tests\\test_boltons_same_v3.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_same_v3.py::test_same_detects_uniform_iterables_variant_3\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "e2a8784",
+        "brokenCommit": "97a9beb",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 97a9beb"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-41",
+        "name": "0041_toolz-take_v4",
+        "repo": "toolz",
+        "url": "https://github.com/pytoolz/toolz",
+        "source": "toolz/itertoolz.py",
+        "test": "leona_contract_tests/test_toolz_take_v4.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 7207,
+        "filesChanged": [
+          "toolz/itertoolz.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_take_preserves_requested_count_variant_4 ________________\n    def test_take_preserves_requested_count_variant_4():\n        data = [\"atlas\",\"bloom\",\"cinder\",\"drift\",\"ember\",\"forge\",\"glade\"]\n>       assert list(take(5, data)) == data[:5]\nE       AssertionError: assert ['atlas', 'bl...der', 'drift'] == ['atlas', 'bl...ift', 'ember']\nE         \nE         Right contains one more item: 'ember'\nE         Use -v to get more diff\nleona_contract_tests\\test_toolz_take_v4.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_take_v4.py::test_take_preserves_requested_count_variant_4\n1 failed in 0.05s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.02s",
+        "baselineCommit": "5b9851f",
+        "brokenCommit": "6c974e4",
+        "repairCommit": "69617de",
+        "commitHash": "69617de",
+        "diff": "diff --git a/toolz/itertoolz.py b/toolz/itertoolz.py\nindex 2608f80..354ecf2 100644\n--- a/toolz/itertoolz.py\n+++ b/toolz/itertoolz.py\n@@ -319,7 +319,7 @@ def take(n, seq):\n         drop\n         tail\n     \"\"\"\n-    return itertools.islice(seq, max(0, n - 1))\n+    return itertools.islice(seq, n)\n \n \n def tail(n, seq):\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 6c974e4"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "69617de"
+          }
+        ]
+      },
+      {
+        "id": "llm-42",
+        "name": "0042_toolz-nth_v4",
+        "repo": "toolz",
+        "url": "https://github.com/pytoolz/toolz",
+        "source": "toolz/itertoolz.py",
+        "test": "leona_contract_tests/test_toolz_nth_v4.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 14376,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_4 ___________________\n    def test_nth_uses_requested_index_variant_4():\n        data = [11,23,37,41,59,61,73]\n>       assert nth(5, data) == data[5]\nE       assert 11 == 61\nE        +  where 11 = nth(5, [11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v4.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v4.py::test_nth_uses_requested_index_variant_4\n1 failed in 0.04s",
+        "afterSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________________ test_nth_uses_requested_index_variant_4 ___________________\n    def test_nth_uses_requested_index_variant_4():\n        data = [11,23,37,41,59,61,73]\n        assert nth(5, data) == data[5]\n>       assert nth(5, iter(data)) == data[5]\nE       assert 11 == 61\nE        +  where 11 = nth(5, <list_iterator object at 0x00000295F8DC5F10>)\nE        +    where <list_iterator object at 0x00000295F8DC5F10> = iter([11, 23, 37, 41, 59, 61, ...])\nleona_contract_tests\\test_toolz_nth_v4.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_toolz_nth_v4.py::test_nth_uses_requested_index_variant_4\n1 failed in 0.04s",
+        "baselineCommit": "564c657",
+        "brokenCommit": "f309bcd",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at f309bcd"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-43",
+        "name": "0043_tqdm-disp-len_v4",
+        "repo": "tqdm",
+        "url": "https://github.com/tqdm/tqdm",
+        "source": "tqdm/utils.py",
+        "test": "leona_contract_tests/test_tqdm_disp_len_v4.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 14554,
+        "filesChanged": [],
+        "beforeSummary": "leona_contract_tests\\test_tqdm_disp_len_v4.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v4.py::test_disp_len_ignores_ansi_variant_4\n1 failed, 2 warnings in 0.04s",
+        "afterSummary": "leona_contract_tests\\test_tqdm_disp_len_v4.py:11: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_disp_len_v4.py::test_disp_len_ignores_ansi_variant_4\n1 failed, 2 warnings in 0.04s",
+        "baselineCommit": "d9a46ed",
+        "brokenCommit": "7de7595",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 7de7595"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-44",
+        "name": "0044_tqdm-is-ascii_v4",
+        "repo": "tqdm",
+        "url": "https://github.com/tqdm/tqdm",
+        "source": "tqdm/utils.py",
+        "test": "leona_contract_tests/test_tqdm_is_ascii_v4.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 3,
+        "rollbackEvents": 3,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 21817,
+        "filesChanged": [],
+        "beforeSummary": "leona_contract_tests\\test_tqdm_is_ascii_v4.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v4.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_4\n1 failed, 2 warnings in 0.04s",
+        "afterSummary": "leona_contract_tests\\test_tqdm_is_ascii_v4.py:10: AssertionError\n============================== warnings summary ===============================\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n..\\..\\..\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441\n  C:\\DevNexusTargets\\devnexus-repair-crucible\\.venv\\lib\\site-packages\\_pytest\\config\\__init__.py:1441: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_tqdm_is_ascii_v4.py::test_latin1_is_supported_but_wide_unicode_is_not_variant_4\n1 failed, 2 warnings in 0.04s",
+        "baselineCommit": "4dea4a0",
+        "brokenCommit": "2d0f6c4",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 2d0f6c4"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-45",
+        "name": "0045_sortedcontainers-membership_v4",
+        "repo": "python-sortedcontainers",
+        "url": "https://github.com/grantjenks/python-sortedcontainers",
+        "source": "src/sortedcontainers/sortedlist.py",
+        "test": "leona_contract_tests/test_sortedcontainers_membership_v4.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 25972,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n____________________ test_sorted_list_membership_variant_4 ____________________\n    def test_sorted_list_membership_variant_4():\n        values = SortedList([41, 43, 45, 47])\n>       assert 45 in values\nE       assert 45 in SortedList([41, 43, 45, 47])\nleona_contract_tests\\test_sortedcontainers_membership_v4.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_membership_v4.py::test_sorted_list_membership_variant_4\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "9c43a4f",
+        "brokenCommit": "4657a4e",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 4657a4e"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-46",
+        "name": "0046_sortedcontainers-bisect-left_v4",
+        "repo": "python-sortedcontainers",
+        "url": "https://github.com/grantjenks/python-sortedcontainers",
+        "source": "src/sortedcontainers/sortedlist.py",
+        "test": "leona_contract_tests/test_sortedcontainers_bisect_left_v4.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8150,
+        "filesChanged": [
+          "src/sortedcontainers/sortedlist.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_bisect_left_reports_left_insertion_index_variant_4 ___________\n    def test_bisect_left_reports_left_insertion_index_variant_4():\n        values = SortedList([30, 40, 50, 60])\n>       assert values.bisect_left(40) == 1\nE       assert 2 == 1\nE        +  where 2 = bisect_left(40)\nE        +    where bisect_left = SortedList([30, 40, 50, 60]).bisect_left\nleona_contract_tests\\test_sortedcontainers_bisect_left_v4.py:11: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_sortedcontainers_bisect_left_v4.py::test_bisect_left_reports_left_insertion_index_variant_4\n1 failed in 0.04s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "00432c5",
+        "brokenCommit": "1a5da5d",
+        "repairCommit": "5c8a987",
+        "commitHash": "5c8a987",
+        "diff": "diff --git a/src/sortedcontainers/sortedlist.py b/src/sortedcontainers/sortedlist.py\nindex 1a74ed8..aecf787 100644\n--- a/src/sortedcontainers/sortedlist.py\n+++ b/src/sortedcontainers/sortedlist.py\n@@ -1111,7 +1111,7 @@ class SortedList(MutableSequence):\n             return self._len\n \n         idx = bisect_left(self._lists[pos], value)\n-        return self._loc(pos, idx) + 1\n+        return self._loc(pos, idx)\n \n     def bisect_right(self, value):\n         \"\"\"Return an index to insert `value` in the sorted list.\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 1a5da5d"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "5c8a987"
+          }
+        ]
+      },
+      {
+        "id": "llm-47",
+        "name": "0047_cachetools-get_v4",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_get_v4.py",
+        "passed": true,
+        "category": "PASS",
+        "retryCount": 1,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 0,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 8455,
+        "filesChanged": [
+          "src/cachetools/__init__.py"
+        ],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_cache_get_existing_and_missing_variant_4 ________________\n    def test_cache_get_existing_and_missing_variant_4():\n        cache = Cache(maxsize=10)\n        cache[\"echo\"] = \"five\"\n>       assert cache.get(\"echo\") == \"five\"\nE       AssertionError: assert None == 'five'\nE        +  where None = get('echo')\nE        +    where get = Cache({'echo': 'five'}, maxsize=10, currsize=1).get\nleona_contract_tests\\test_cachetools_get_v4.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_get_v4.py::test_cache_get_existing_and_missing_variant_4\n1 failed in 0.03s",
+        "afterSummary": ".                                                                        [100%]\n1 passed in 0.01s",
+        "baselineCommit": "1527644",
+        "brokenCommit": "ed0445e",
+        "repairCommit": "c0226e7",
+        "commitHash": "c0226e7",
+        "diff": "diff --git a/src/cachetools/__init__.py b/src/cachetools/__init__.py\nindex bdd6952..8d9b7a1 100644\n--- a/src/cachetools/__init__.py\n+++ b/src/cachetools/__init__.py\n@@ -112,7 +112,10 @@ class Cache(collections.abc.MutableMapping):\n     # somewhat less elegant versions.\n \n     def get(self, key, default=None):\n-        return default\n+        try:\n+            return self.__data[key]\n+        except KeyError:\n+            return default\n \n     def pop(self, key, default=__marker):\n         if key in self:\n",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at ed0445e"
+          },
+          {
+            "step": "llm repair",
+            "status": "1 attempt(s), 0 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest passed"
+          },
+          {
+            "step": "commit",
+            "status": "c0226e7"
+          }
+        ]
+      },
+      {
+        "id": "llm-48",
+        "name": "0048_cachetools-setdefault_v4",
+        "repo": "cachetools",
+        "url": "https://github.com/tkem/cachetools",
+        "source": "src/cachetools/__init__.py",
+        "test": "leona_contract_tests/test_cachetools_setdefault_v4.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 0,
+        "syntaxInvalidPatchCount": 3,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 16558,
+        "filesChanged": [],
+        "beforeSummary": "================================== FAILURES ===================================\n_____________ test_cache_setdefault_preserves_existing_variant_4 ______________\n    def test_cache_setdefault_preserves_existing_variant_4():\n        cache = Cache(maxsize=10)\n        cache[\"center\"] = \"original\"\n>       assert cache.setdefault(\"center\", \"replacement\") == \"original\"\nE       AssertionError: assert 'replacement' == 'original'\nE         \nE         - original\nE         + replacement\nleona_contract_tests\\test_cachetools_setdefault_v4.py:12: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_cachetools_setdefault_v4.py::test_cache_setdefault_preserves_existing_variant_4\n1 failed in 0.03s",
+        "afterSummary": "",
+        "baselineCommit": "448263e",
+        "brokenCommit": "8343863",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at 8343863"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-49",
+        "name": "0049_boltons-first_v4",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_first_v4.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 13823,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n___________ test_first_returns_first_truthy_or_key_match_variant_4 ____________\n    def test_first_returns_first_truthy_or_key_match_variant_4():\n>       assert first([0, None, \"\", \"green\", \"later\"]) == \"green\"\nE       AssertionError: assert None == 'green'\nE        +  where None = first([0, None, '', 'green', 'later'])\nleona_contract_tests\\test_boltons_first_v4.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_first_v4.py::test_first_returns_first_truthy_or_key_match_variant_4\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "e3a813c",
+        "brokenCommit": "aa275b4",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at aa275b4"
+          },
+          {
+            "step": "llm repair",
+            "status": "3 attempt(s), 3 patch rejection(s)"
+          },
+          {
+            "step": "governance",
+            "status": "0 unauthorized, tests unchanged"
+          },
+          {
+            "step": "verify",
+            "status": "pytest failed: MODEL_LIMITATION"
+          },
+          {
+            "step": "commit",
+            "status": "no repair commit"
+          }
+        ]
+      },
+      {
+        "id": "llm-50",
+        "name": "0050_boltons-same_v4",
+        "repo": "boltons",
+        "url": "https://github.com/mahmoud/boltons",
+        "source": "boltons/iterutils.py",
+        "test": "leona_contract_tests/test_boltons_same_v4.py",
+        "passed": false,
+        "category": "MODEL_LIMITATION",
+        "retryCount": 3,
+        "convergenceRetries": 0,
+        "rollbackEvents": 0,
+        "patchRejectionCount": 3,
+        "hallucinatedPatchAttempts": 3,
+        "syntaxInvalidPatchCount": 0,
+        "unauthorizedMutationAttempts": 0,
+        "repairDurationMs": 11448,
+        "filesChanged": [],
+        "beforeSummary": "F                                                                        [100%]\n================================== FAILURES ===================================\n________________ test_same_detects_uniform_iterables_variant_4 ________________\n    def test_same_detects_uniform_iterables_variant_4():\n>       assert same([\"mirth\", \"mirth\", \"mirth\"]) is True\nE       AssertionError: assert False is True\nE        +  where False = same(['mirth', 'mirth', 'mirth'])\nleona_contract_tests\\test_boltons_same_v4.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED leona_contract_tests/test_boltons_same_v4.py::test_same_detects_uniform_iterables_variant_4\n1 failed in 0.04s",
+        "afterSummary": "",
+        "baselineCommit": "bab5b98",
+        "brokenCommit": "a71ed57",
+        "repairCommit": "",
+        "commitHash": "",
+        "diff": "",
+        "trace": [
+          {
+            "step": "baseline",
+            "status": "contract test passed before mutation"
+          },
+          {
+            "step": "induced failure",
+            "status": "failed as expected at a71ed57"
           },
           {
             "step": "llm repair",
@@ -42065,7 +44433,7 @@
     "controlledReport": "C:\\DevNexusTargets\\saved-benchmarks\\devnexus-repair-bench-1000-20260520070004\\artifact-backup\\benchmark-report.md",
     "ossResults": "C:\\DevNexusTargets\\oss-repair-attempts-20260520073500\\oss-attempt-results\\results.json",
     "ossReport": "C:\\DevNexusTargets\\oss-repair-attempts-20260520073500\\oss-attempt-results\\benchmark-report.md",
-    "llmResults": "C:\\DevNexusTargets\\oss-repair-attempts-llm-smoke-6\\oss-attempt-results\\results.json",
-    "llmReport": "C:\\DevNexusTargets\\oss-repair-attempts-llm-smoke-6\\oss-attempt-results\\benchmark-report.md"
+    "llmResults": "C:\\DevNexusTargets\\oss-repair-attempts-50-true-llm-20260520101500\\oss-attempt-results\\results.json",
+    "llmReport": "C:\\DevNexusTargets\\oss-repair-attempts-50-true-llm-20260520101500\\oss-attempt-results\\benchmark-report.md"
   }
 }

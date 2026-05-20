@@ -15,6 +15,7 @@ This repository is intentionally a public release surface, not the complete priv
 - `orchestration-shell/` - simple command wrappers for evidence validation.
 - `evidence/` - raw benchmark reports and JSON result artifacts.
 - `docs/` - technical brief and public/private release boundary.
+- `docs/evidence-provenance.md` - operator disclosure, governance-layer separation, and evidence-integrity requirements.
 
 ## What Stays Private
 
@@ -29,16 +30,60 @@ This repository is intentionally a public release surface, not the complete priv
 
 - Controlled synthetic benchmark: 1,000/1,000 passing repair cases.
 - Real OSS deterministic mutation-replay attempts: 5/5 passing attempts.
-- True LLM OSS mutation-repair validation: 1/5 passing attempts with 4/5 retained as `MODEL_LIMITATION`.
+- True LLM OSS mutation-repair validation: 15/50 passing attempts with 35/50 retained as `MODEL_LIMITATION`.
 - Unauthorized mutation attempts: 0.
 - Controlled test-file modifications: 0.
 - Controlled rollback events: 5.
 
 ## Claim Boundary
 
+For deterministic replay:
+
+> This validates the benchmark harness, mutation boundaries, rollback system, telemetry, and evidence pipeline. It does not prove unknown-bug autonomous reasoning.
+
 The controlled 1,000-case benchmark and deterministic OSS replay evidence validate the harness, mutation boundaries, rollback discipline, diffs, commits, and telemetry pipeline.
 
-The true-LLM validation is separate. It measures model-generated diagnosis and patch creation without known-answer repair replay. Current public evidence shows the pipeline works and fails closed, but the local model snapshot is not yet a high-success autonomous repair result.
+For true LLM repair:
+
+> This evaluates actual model-driven repair attempts using pytest telemetry and authorized source context. Successes and failures are preserved honestly.
+
+The true-LLM validation is separate. It measures model-generated diagnosis and patch creation without known-answer repair replay. Current public evidence shows the pipeline works and fails closed, while true LLM repair results remain separate from deterministic replay results.
+
+## Operator Disclosure
+
+Codex was used as a development/operator assistant to launch commands, inspect outputs, and guide repository maintenance. LEONA performed the governed repair benchmark execution through its own repair pipeline, validation layer, rollback system, mutation constraints, and telemetry generation.
+
+Codex-assisted operation exercised LEONA's repair infrastructure. LEONA generated governed benchmark telemetry.
+
+## Governance Layer Separation
+
+- Codex governance: operator/development safety layer for command execution, repository maintenance, output inspection, and app-development risk control.
+- LEONA governance: product repair/governance layer for repair attempts, patch parsing, validation, rollback, mutation boundaries, immutable-test enforcement, and telemetry.
+
+Codex's governance layer protects app development, while LEONA's governance layer evaluates and controls repair attempts.
+
+## Evidence Integrity Requirements
+
+Valid LEONA repair evidence requires:
+
+- LEONA repair pipeline called the model provider.
+- LEONA generated or received proposed patches through its repair pipeline.
+- LEONA parsed, validated, and applied patches.
+- Pytest before/after results were produced by LEONA's runner.
+- Telemetry artifacts were produced by LEONA.
+- Tests remained immutable.
+- Unauthorized mutations were rejected or recorded.
+- Codex did not inject known-answer fixes into the repair loop.
+
+## Reproducibility Direction
+
+The long-term goal is to make the benchmark independently runnable without Codex through commands like:
+
+```powershell
+node run_oss50_llm.js --count 50
+```
+
+This reduces ambiguity for outside reviewers by making LEONA's benchmark execution reproducible without relying on an operator assistant.
 
 ## Quick Start
 

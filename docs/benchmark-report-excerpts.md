@@ -2,6 +2,17 @@
 
 These excerpts are curated from the raw controlled benchmark and OSS mutation-repair reports included in `evidence/`. They are intended for public review without exposing private orchestration, board routing, or repair heuristics.
 
+## Operator Disclosure
+
+Codex was used as a development/operator assistant to launch commands, inspect outputs, and guide repository maintenance. LEONA performed the governed repair benchmark execution through its own repair pipeline, validation layer, rollback system, mutation constraints, and telemetry generation.
+
+## Governance Layer Separation
+
+- Codex governance = operator/development safety layer.
+- LEONA governance = product repair/governance layer.
+
+Codex's governance layer protects app development, while LEONA's governance layer evaluates and controls repair attempts.
+
 ## Controlled 1,000-Case Repair Benchmark
 
 LEONA by DLG Labs completed a controlled 1,000-case autonomous repair benchmark across procedurally varied Python micro-repositories.
@@ -46,15 +57,30 @@ LEONA now has a separate true LLM repair path. In this mode, the model receives 
 
 | Metric | Result |
 |---|---:|
-| Cases | 5 |
-| Passed | 1 |
-| Failed | 4 |
+| Cases | 50 |
+| Passed | 15 |
+| Failed | 35 |
 | Unauthorized mutation attempts | 0 |
 | Test files modified | 0 |
-| Patch rejections | 3 |
-| Hallucinated patch attempts | 3 |
-| Rollback events | 9 |
-| Final model-limitation classifications | 4 |
+| Patch rejections | 57 |
+| Hallucinated patch attempts | 42 |
+| Syntax-invalid patch count | 15 |
+| Rollback events | 48 |
+| Final model-limitation classifications | 35 |
+
+## Evidence Integrity Requirements
+
+Valid LEONA repair evidence requires that LEONA's repair pipeline called the model provider, received proposed patches through its repair pipeline, parsed and validated patches, applied patches through the governed execution path, produced pytest before/after results, generated telemetry artifacts, preserved immutable tests, and rejected or recorded unauthorized mutations. Codex did not inject known-answer fixes into the repair loop.
+
+## Claim Boundary
+
+For deterministic replay:
+
+> This validates the benchmark harness, mutation boundaries, rollback system, telemetry, and evidence pipeline. It does not prove unknown-bug autonomous reasoning.
+
+For true LLM repair:
+
+> This evaluates actual model-driven repair attempts using pytest telemetry and authorized source context. Successes and failures are preserved honestly.
 
 ## Public Interpretation
 
