@@ -42,7 +42,7 @@ function main() {
   if (llm.repairMode === "true-llm") pass("true LLM validation is labeled separately");
   else fail(`true LLM repairMode expected true-llm, got ${llm.repairMode}`);
 
-  if (llm.total === 50 && llm.passed === 15 && llm.failed === 35) pass("true LLM validation snapshot is 15/50 with 35 retained failures");
+  if (llm.total === 50 && llm.passed === 23 && llm.failed === 27) pass("adaptive true LLM validation snapshot is 23/50 with 27 retained failures");
   else fail(`true LLM pass/fail mismatch: ${llm.passed}/${llm.total}, failed=${llm.failed}`);
 
   if (llm.unauthorizedMutationAttempts === 0 && llm.testFilesModified === 0) pass("true LLM boundaries held");

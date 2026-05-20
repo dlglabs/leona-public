@@ -254,7 +254,7 @@
     <div class="hero-inner">
       <div class="eyebrow">Public benchmark transparency kit</div>
       <h1>LEONA by DLG Labs</h1>
-      <p>Autonomous repair benchmark evidence with reproducible telemetry, diff traces, retry counts, rollback events, controlled public boundaries, and a separate true-LLM repair validation snapshot.</p>
+      <p>Autonomous repair benchmark evidence with reproducible telemetry, diff traces, retry counts, rollback events, controlled public boundaries, and a separate adaptive true-LLM repair validation snapshot.</p>
       <div class="actions">
         <a class="button primary" href="dashboard/index.html">Open Dashboard</a>
         <a class="button" href="docs/benchmark-report-excerpts.html">Read Excerpts</a>
@@ -272,7 +272,7 @@
       <div class="metric"><strong>1000/1000</strong><span>controlled repair cases passed</span></div>
       <div class="metric"><strong>0</strong><span>unauthorized mutation attempts</span></div>
       <div class="metric"><strong>0</strong><span>test files modified</span></div>
-      <div class="metric"><strong>15/50</strong><span>true LLM repair validation passed</span></div>
+      <div class="metric"><strong>23/50</strong><span>true LLM repair validation passed</span></div>
     </div>
   </section>
 
@@ -290,7 +290,8 @@
         <ul>
           <li>Static benchmark dashboard with embedded telemetry.</li>
           <li>Raw `results.json` and `benchmark-report.md` evidence.</li>
-          <li>Separate true-LLM validation telemetry with model-limitation failures retained.</li>
+          <li>Adaptive true-LLM validation telemetry with model-limitation failures retained.</li>
+          <li>Provider evidence: Ollama with qwen2.5-coder:14b, max 9 repair retries.</li>
           <li>Curated report excerpts for public readers.</li>
           <li>Validation CLI and terminal viewer.</li>
           <li>Public/private boundary documentation.</li>

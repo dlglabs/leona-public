@@ -4,7 +4,7 @@
 
 LEONA by DLG Labs completed a controlled 1,000-case deterministic mutation-replay benchmark designed to test repair discipline across procedurally varied Python micro-repositories. The final corrected run achieved **1,000/1,000 passing cases**, with **0 test-file modifications**, **0 unauthorized mutation attempts**, and **1,000/1,000 convergence success**. The benchmark was archived with raw telemetry and a human-readable report for repeatable review.
 
-LEONA has also added a separate true LLM repair pipeline. That pipeline removes known-answer replay from the repair step, sends pytest telemetry and authorized source context to a model, validates the proposed patch, applies it through the frozen execution chokepoint, reruns pytest, and preserves failures honestly. A 50-case validation run currently shows **15/50 passing true LLM repairs** and **35/50 MODEL_LIMITATION** classifications.
+LEONA has also added a separate true LLM repair pipeline. That pipeline removes known-answer replay from the repair step, sends pytest telemetry and authorized source context to a model, validates the proposed patch, applies it through the frozen execution chokepoint, reruns pytest, and preserves failures honestly. The latest 50-case adaptive validation run currently shows **23/50 passing true LLM repairs** and **27/50 MODEL_LIMITATION** classifications.
 
 Public contact: [founder@dlglabs.org](mailto:founder@dlglabs.org)
 
@@ -43,19 +43,19 @@ The suite covered 30 repair families, including arithmetic guards, statistics ed
 
 ### True LLM Validation Snapshot
 
-- Validation root: `C:\DevNexusTargets\oss-repair-attempts-50-true-llm-20260520101500`
+- Validation root: `C:\DevNexusTargets\oss-repair-attempts-50-adaptive-true-llm-20260520115521`
 - Provider: `ollama`
 - Model: `qwen2.5-coder:14b`
 - Cases: **50**
-- Passed: **15/50**
-- Failed: **35/50**
-- Final classifications: **15 PASS**, **35 MODEL_LIMITATION**
+- Passed: **23/50**
+- Failed: **27/50**
+- Final classifications: **23 PASS**, **27 MODEL_LIMITATION**
 - Unauthorized mutation attempts: **0**
 - Test files modified: **0**
-- Patch rejections: **57**
-- Hallucinated patch attempts: **42**
-- Syntax-invalid patch count: **15**
-- Rollback events: **48**
+- Patch rejections: **217**
+- Hallucinated patch attempts: **45**
+- Syntax-invalid patch count: **9**
+- Rollback events: **98**
 - Evidence artifacts: `benchmark-report.md`, `results.json`, telemetry JSON, model traces, and diff snapshots.
 
 ## Interpretation

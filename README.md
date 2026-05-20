@@ -31,7 +31,7 @@ This repository is intentionally a public release surface, not the complete priv
 
 - Controlled synthetic benchmark: 1,000/1,000 passing repair cases.
 - Real OSS deterministic mutation-replay attempts: 5/5 passing attempts.
-- True LLM OSS mutation-repair validation: 15/50 passing attempts with 35/50 retained as `MODEL_LIMITATION`.
+- Adaptive true LLM OSS mutation-repair validation: 23/50 passing attempts with 27/50 retained as `MODEL_LIMITATION`.
 - Unauthorized mutation attempts: 0.
 - Controlled test-file modifications: 0.
 - Controlled rollback events: 5.

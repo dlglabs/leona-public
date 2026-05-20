@@ -6,10 +6,10 @@ Open `index.html` in a browser or publish this folder as static hosting.
 
 - Controlled benchmark: 1000/1000 passed
 - Real OSS attempts: 5/5 passed
-- True LLM validation: 15/50 passed
+- Adaptive true LLM validation: 23/50 passed
 - Unauthorized mutation attempts: 0
 - True LLM unauthorized mutation attempts: 0
-- True LLM patch rejections: 57
+- True LLM patch rejections: 217
 - Controlled rollback events: 5
 
 ## Claim Boundary
@@ -41,5 +41,5 @@ Codex was used as a development/operator assistant to launch commands, inspect o
 - Controlled report: `C:\DevNexusTargets\saved-benchmarks\devnexus-repair-bench-1000-20260520070004\artifact-backup\benchmark-report.md`
 - OSS results: `C:\DevNexusTargets\oss-repair-attempts-20260520073500\oss-attempt-results\results.json`
 - OSS report: `C:\DevNexusTargets\oss-repair-attempts-20260520073500\oss-attempt-results\benchmark-report.md`
-- True LLM results: `C:\DevNexusTargets\oss-repair-attempts-50-true-llm-20260520101500\oss-attempt-results\results.json`
-- True LLM report: `C:\DevNexusTargets\oss-repair-attempts-50-true-llm-20260520101500\oss-attempt-results\benchmark-report.md`
+- True LLM results: `C:\DevNexusTargets\oss-repair-attempts-50-adaptive-true-llm-20260520115521\oss-attempt-results\results.json`
+- True LLM report: `C:\DevNexusTargets\oss-repair-attempts-50-adaptive-true-llm-20260520115521\oss-attempt-results\benchmark-report.md`
