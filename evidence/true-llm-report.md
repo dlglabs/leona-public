@@ -1,4 +1,4 @@
-# LEONA True LLM OSS Mutation-Repair Attempts 50
+﻿# LEONA True LLM OSS Mutation-Repair Attempts 50
 
 These are controlled mutation-repair trials on real OSS repositories. They are not claims of fixing live upstream bugs.
 
@@ -7,8 +7,12 @@ This report is true autonomous LLM repair telemetry. It must not be merged with 
 Generated: 2026-05-20T04:30:12.077Z
 Root: `C:\DevNexusTargets\oss-repair-attempts-50-adaptive-true-llm-20260520115521`
 Provider: `ollama`
-Model: `qwen2.5-coder:14b`
+Model: `local-14b-code-model`
 Adaptive retries: enabled (9 max attempts)
+
+## Public Model Labeling
+
+Public benchmark artifacts use generalized model labels such as `local-14b-code-model`. Exact internal model IDs, provider tuning notes, and private model comparison telemetry remain private unless DLG Labs separately approves their release.
 
 ## Provenance Metadata
 
@@ -18,7 +22,7 @@ Adaptive retries: enabled (9 max attempts)
 | repairSystem | "LEONA by DLG Labs" |
 | repairMode | "TRUE_LLM_REPAIR" |
 | modelProvider | "ollama" |
-| modelName | "qwen2.5-coder:14b" |
+| modelName | "local-14b-code-model" |
 | knownAnswerAccess | false |
 | executionRunner | "LEONA ExecutionRunner" |
 | telemetryGeneratedBy | "LEONA" |
@@ -129,3 +133,4 @@ This evaluates actual model-driven repair attempts using pytest telemetry and au
 - The LLM sees pytest telemetry, immutable test names, authorized source paths, and source context.
 - Source repair deltas are applied through the frozen ExecutionRunner checkpoint/applyDeltas chokepoint.
 - Failures are classified and retained as benchmark evidence.
+

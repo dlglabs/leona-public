@@ -1,11 +1,11 @@
-{
+﻿{
   "root": "C:\\DevNexusTargets\\oss-repair-attempts-50-adaptive-true-llm-20260520115521",
   "generatedAt": "2026-05-20T04:30:12.077Z",
   "repairMode": "true-llm",
   "adaptiveRetryEnabled": true,
   "maxRepairRetries": 9,
   "provider": "ollama",
-  "model": "qwen2.5-coder:14b",
+  "model": "local-14b-code-model",
   "total": 50,
   "passCount": 23,
   "failCount": 27,
@@ -104,7 +104,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0002_toolz-nth_v0",
@@ -226,7 +226,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0003_tqdm-disp-len_v0",
@@ -347,7 +347,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0004_tqdm-is-ascii_v0",
@@ -472,7 +472,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0005_sortedcontainers-membership_v0",
@@ -598,7 +598,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0006_sortedcontainers-bisect-left_v0",
@@ -678,7 +678,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0007_cachetools-get_v0",
@@ -803,7 +803,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0008_cachetools-setdefault_v0",
@@ -922,7 +922,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0009_boltons-first_v0",
@@ -1045,7 +1045,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0010_boltons-same_v0",
@@ -1137,7 +1137,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0011_toolz-take_v1",
@@ -1215,7 +1215,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0012_toolz-nth_v1",
@@ -1293,7 +1293,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0013_tqdm-disp-len_v1",
@@ -1414,7 +1414,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0014_tqdm-is-ascii_v1",
@@ -1538,7 +1538,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0015_sortedcontainers-membership_v1",
@@ -1663,7 +1663,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0016_sortedcontainers-bisect-left_v1",
@@ -1743,7 +1743,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0017_cachetools-get_v1",
@@ -1869,7 +1869,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0018_cachetools-setdefault_v1",
@@ -1987,7 +1987,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0019_boltons-first_v1",
@@ -2110,7 +2110,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0020_boltons-same_v1",
@@ -2202,7 +2202,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0021_toolz-take_v2",
@@ -2280,7 +2280,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0022_toolz-nth_v2",
@@ -2397,7 +2397,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0023_tqdm-disp-len_v2",
@@ -2518,7 +2518,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0024_tqdm-is-ascii_v2",
@@ -2641,7 +2641,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0025_sortedcontainers-membership_v2",
@@ -2767,7 +2767,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0026_sortedcontainers-bisect-left_v2",
@@ -2847,7 +2847,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0027_cachetools-get_v2",
@@ -2974,7 +2974,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0028_cachetools-setdefault_v2",
@@ -3096,7 +3096,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0029_boltons-first_v2",
@@ -3218,7 +3218,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0030_boltons-same_v2",
@@ -3309,7 +3309,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0031_toolz-take_v3",
@@ -3387,7 +3387,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0032_toolz-nth_v3",
@@ -3504,7 +3504,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0033_tqdm-disp-len_v3",
@@ -3625,7 +3625,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0034_tqdm-is-ascii_v3",
@@ -3748,7 +3748,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0035_sortedcontainers-membership_v3",
@@ -3874,7 +3874,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0036_sortedcontainers-bisect-left_v3",
@@ -3954,7 +3954,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0037_cachetools-get_v3",
@@ -4080,7 +4080,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0038_cachetools-setdefault_v3",
@@ -4160,7 +4160,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0039_boltons-first_v3",
@@ -4283,7 +4283,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0040_boltons-same_v3",
@@ -4409,7 +4409,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0041_toolz-take_v4",
@@ -4487,7 +4487,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0042_toolz-nth_v4",
@@ -4585,7 +4585,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0043_tqdm-disp-len_v4",
@@ -4706,7 +4706,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0044_tqdm-is-ascii_v4",
@@ -4828,7 +4828,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0045_sortedcontainers-membership_v4",
@@ -4954,7 +4954,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0046_sortedcontainers-bisect-left_v4",
@@ -5034,7 +5034,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0047_cachetools-get_v4",
@@ -5160,7 +5160,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0048_cachetools-setdefault_v4",
@@ -5284,7 +5284,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0049_boltons-first_v4",
@@ -5407,7 +5407,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     },
     {
       "id": "0050_boltons-same_v4",
@@ -5498,7 +5498,7 @@
       "promptTemplateId": "true-llm-repair-v2-adaptive",
       "repairMode": "true-llm",
       "provider": "ollama",
-      "model": "qwen2.5-coder:14b"
+      "model": "local-14b-code-model"
     }
   ]
 }

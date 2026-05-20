@@ -1,4 +1,4 @@
-{
+﻿{
   "generatedAt": "2026-05-20T04:30:12.077Z",
   "controlled": {
     "label": "LEONA Controlled 1,000-Case Repair Benchmark",
@@ -41753,7 +41753,7 @@
     "adaptiveRetryEnabled": true,
     "maxRepairRetries": 9,
     "provider": "ollama",
-    "model": "qwen2.5-coder:14b",
+    "model": "local-14b-code-model",
     "total": 50,
     "passed": 23,
     "failed": 27,
@@ -41829,7 +41829,7 @@
       {
         "id": "0001_toolz-take_v0",
         "name": "0001_toolz-take_v0",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -41864,7 +41864,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -41883,7 +41883,7 @@
       {
         "id": "0002_toolz-nth_v0",
         "name": "0002_toolz-nth_v0",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -41918,7 +41918,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -41937,7 +41937,7 @@
       {
         "id": "0003_tqdm-disp-len_v0",
         "name": "0003_tqdm-disp-len_v0",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -41970,7 +41970,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -41989,7 +41989,7 @@
       {
         "id": "0004_tqdm-is-ascii_v0",
         "name": "0004_tqdm-is-ascii_v0",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -42022,7 +42022,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42041,7 +42041,7 @@
       {
         "id": "0005_sortedcontainers-membership_v0",
         "name": "0005_sortedcontainers-membership_v0",
-        "category": "python-sortedcontainers · MODEL_LIMITATION",
+        "category": "python-sortedcontainers Â· MODEL_LIMITATION",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": false,
@@ -42074,7 +42074,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42093,7 +42093,7 @@
       {
         "id": "0006_sortedcontainers-bisect-left_v0",
         "name": "0006_sortedcontainers-bisect-left_v0",
-        "category": "python-sortedcontainers · PASS",
+        "category": "python-sortedcontainers Â· PASS",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": true,
@@ -42128,7 +42128,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42147,7 +42147,7 @@
       {
         "id": "0007_cachetools-get_v0",
         "name": "0007_cachetools-get_v0",
-        "category": "cachetools · MODEL_LIMITATION",
+        "category": "cachetools Â· MODEL_LIMITATION",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": false,
@@ -42180,7 +42180,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42199,7 +42199,7 @@
       {
         "id": "0008_cachetools-setdefault_v0",
         "name": "0008_cachetools-setdefault_v0",
-        "category": "cachetools · PASS",
+        "category": "cachetools Â· PASS",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": true,
@@ -42234,7 +42234,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 8 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 8 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42253,7 +42253,7 @@
       {
         "id": "0009_boltons-first_v0",
         "name": "0009_boltons-first_v0",
-        "category": "boltons · MODEL_LIMITATION",
+        "category": "boltons Â· MODEL_LIMITATION",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": false,
@@ -42286,7 +42286,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42305,7 +42305,7 @@
       {
         "id": "0010_boltons-same_v0",
         "name": "0010_boltons-same_v0",
-        "category": "boltons · PASS",
+        "category": "boltons Â· PASS",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": true,
@@ -42340,7 +42340,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 4 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 4 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42359,7 +42359,7 @@
       {
         "id": "0011_toolz-take_v1",
         "name": "0011_toolz-take_v1",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -42394,7 +42394,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42413,7 +42413,7 @@
       {
         "id": "0012_toolz-nth_v1",
         "name": "0012_toolz-nth_v1",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -42448,7 +42448,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42467,7 +42467,7 @@
       {
         "id": "0013_tqdm-disp-len_v1",
         "name": "0013_tqdm-disp-len_v1",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -42500,7 +42500,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42519,7 +42519,7 @@
       {
         "id": "0014_tqdm-is-ascii_v1",
         "name": "0014_tqdm-is-ascii_v1",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -42552,7 +42552,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42571,7 +42571,7 @@
       {
         "id": "0015_sortedcontainers-membership_v1",
         "name": "0015_sortedcontainers-membership_v1",
-        "category": "python-sortedcontainers · MODEL_LIMITATION",
+        "category": "python-sortedcontainers Â· MODEL_LIMITATION",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": false,
@@ -42604,7 +42604,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42623,7 +42623,7 @@
       {
         "id": "0016_sortedcontainers-bisect-left_v1",
         "name": "0016_sortedcontainers-bisect-left_v1",
-        "category": "python-sortedcontainers · PASS",
+        "category": "python-sortedcontainers Â· PASS",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": true,
@@ -42658,7 +42658,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42677,7 +42677,7 @@
       {
         "id": "0017_cachetools-get_v1",
         "name": "0017_cachetools-get_v1",
-        "category": "cachetools · MODEL_LIMITATION",
+        "category": "cachetools Â· MODEL_LIMITATION",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": false,
@@ -42710,7 +42710,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42729,7 +42729,7 @@
       {
         "id": "0018_cachetools-setdefault_v1",
         "name": "0018_cachetools-setdefault_v1",
-        "category": "cachetools · PASS",
+        "category": "cachetools Â· PASS",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": true,
@@ -42764,7 +42764,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 8 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 8 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42783,7 +42783,7 @@
       {
         "id": "0019_boltons-first_v1",
         "name": "0019_boltons-first_v1",
-        "category": "boltons · MODEL_LIMITATION",
+        "category": "boltons Â· MODEL_LIMITATION",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": false,
@@ -42816,7 +42816,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42835,7 +42835,7 @@
       {
         "id": "0020_boltons-same_v1",
         "name": "0020_boltons-same_v1",
-        "category": "boltons · PASS",
+        "category": "boltons Â· PASS",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": true,
@@ -42870,7 +42870,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 4 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 4 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42889,7 +42889,7 @@
       {
         "id": "0021_toolz-take_v2",
         "name": "0021_toolz-take_v2",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -42924,7 +42924,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42943,7 +42943,7 @@
       {
         "id": "0022_toolz-nth_v2",
         "name": "0022_toolz-nth_v2",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -42978,7 +42978,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 8 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 8 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -42997,7 +42997,7 @@
       {
         "id": "0023_tqdm-disp-len_v2",
         "name": "0023_tqdm-disp-len_v2",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -43030,7 +43030,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43049,7 +43049,7 @@
       {
         "id": "0024_tqdm-is-ascii_v2",
         "name": "0024_tqdm-is-ascii_v2",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -43082,7 +43082,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43101,7 +43101,7 @@
       {
         "id": "0025_sortedcontainers-membership_v2",
         "name": "0025_sortedcontainers-membership_v2",
-        "category": "python-sortedcontainers · MODEL_LIMITATION",
+        "category": "python-sortedcontainers Â· MODEL_LIMITATION",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": false,
@@ -43134,7 +43134,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43153,7 +43153,7 @@
       {
         "id": "0026_sortedcontainers-bisect-left_v2",
         "name": "0026_sortedcontainers-bisect-left_v2",
-        "category": "python-sortedcontainers · PASS",
+        "category": "python-sortedcontainers Â· PASS",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": true,
@@ -43188,7 +43188,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43207,7 +43207,7 @@
       {
         "id": "0027_cachetools-get_v2",
         "name": "0027_cachetools-get_v2",
-        "category": "cachetools · MODEL_LIMITATION",
+        "category": "cachetools Â· MODEL_LIMITATION",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": false,
@@ -43240,7 +43240,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43259,7 +43259,7 @@
       {
         "id": "0028_cachetools-setdefault_v2",
         "name": "0028_cachetools-setdefault_v2",
-        "category": "cachetools · MODEL_LIMITATION",
+        "category": "cachetools Â· MODEL_LIMITATION",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": false,
@@ -43292,7 +43292,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43311,7 +43311,7 @@
       {
         "id": "0029_boltons-first_v2",
         "name": "0029_boltons-first_v2",
-        "category": "boltons · MODEL_LIMITATION",
+        "category": "boltons Â· MODEL_LIMITATION",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": false,
@@ -43344,7 +43344,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43363,7 +43363,7 @@
       {
         "id": "0030_boltons-same_v2",
         "name": "0030_boltons-same_v2",
-        "category": "boltons · PASS",
+        "category": "boltons Â· PASS",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": true,
@@ -43398,7 +43398,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 4 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 4 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43417,7 +43417,7 @@
       {
         "id": "0031_toolz-take_v3",
         "name": "0031_toolz-take_v3",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -43452,7 +43452,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43471,7 +43471,7 @@
       {
         "id": "0032_toolz-nth_v3",
         "name": "0032_toolz-nth_v3",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -43506,7 +43506,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 8 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 8 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43525,7 +43525,7 @@
       {
         "id": "0033_tqdm-disp-len_v3",
         "name": "0033_tqdm-disp-len_v3",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -43558,7 +43558,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43577,7 +43577,7 @@
       {
         "id": "0034_tqdm-is-ascii_v3",
         "name": "0034_tqdm-is-ascii_v3",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -43610,7 +43610,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43629,7 +43629,7 @@
       {
         "id": "0035_sortedcontainers-membership_v3",
         "name": "0035_sortedcontainers-membership_v3",
-        "category": "python-sortedcontainers · MODEL_LIMITATION",
+        "category": "python-sortedcontainers Â· MODEL_LIMITATION",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": false,
@@ -43662,7 +43662,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43681,7 +43681,7 @@
       {
         "id": "0036_sortedcontainers-bisect-left_v3",
         "name": "0036_sortedcontainers-bisect-left_v3",
-        "category": "python-sortedcontainers · PASS",
+        "category": "python-sortedcontainers Â· PASS",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": true,
@@ -43716,7 +43716,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43735,7 +43735,7 @@
       {
         "id": "0037_cachetools-get_v3",
         "name": "0037_cachetools-get_v3",
-        "category": "cachetools · MODEL_LIMITATION",
+        "category": "cachetools Â· MODEL_LIMITATION",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": false,
@@ -43768,7 +43768,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43787,7 +43787,7 @@
       {
         "id": "0038_cachetools-setdefault_v3",
         "name": "0038_cachetools-setdefault_v3",
-        "category": "cachetools · PASS",
+        "category": "cachetools Â· PASS",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": true,
@@ -43822,7 +43822,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43841,7 +43841,7 @@
       {
         "id": "0039_boltons-first_v3",
         "name": "0039_boltons-first_v3",
-        "category": "boltons · MODEL_LIMITATION",
+        "category": "boltons Â· MODEL_LIMITATION",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": false,
@@ -43874,7 +43874,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43893,7 +43893,7 @@
       {
         "id": "0040_boltons-same_v3",
         "name": "0040_boltons-same_v3",
-        "category": "boltons · MODEL_LIMITATION",
+        "category": "boltons Â· MODEL_LIMITATION",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": false,
@@ -43926,7 +43926,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43945,7 +43945,7 @@
       {
         "id": "0041_toolz-take_v4",
         "name": "0041_toolz-take_v4",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -43980,7 +43980,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -43999,7 +43999,7 @@
       {
         "id": "0042_toolz-nth_v4",
         "name": "0042_toolz-nth_v4",
-        "category": "toolz · PASS",
+        "category": "toolz Â· PASS",
         "repo": "toolz",
         "source": "toolz/itertoolz.py",
         "passed": true,
@@ -44034,7 +44034,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 5 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 5 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -44053,7 +44053,7 @@
       {
         "id": "0043_tqdm-disp-len_v4",
         "name": "0043_tqdm-disp-len_v4",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -44086,7 +44086,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -44105,7 +44105,7 @@
       {
         "id": "0044_tqdm-is-ascii_v4",
         "name": "0044_tqdm-is-ascii_v4",
-        "category": "tqdm · MODEL_LIMITATION",
+        "category": "tqdm Â· MODEL_LIMITATION",
         "repo": "tqdm",
         "source": "tqdm/utils.py",
         "passed": false,
@@ -44138,7 +44138,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -44157,7 +44157,7 @@
       {
         "id": "0045_sortedcontainers-membership_v4",
         "name": "0045_sortedcontainers-membership_v4",
-        "category": "python-sortedcontainers · MODEL_LIMITATION",
+        "category": "python-sortedcontainers Â· MODEL_LIMITATION",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": false,
@@ -44190,7 +44190,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -44209,7 +44209,7 @@
       {
         "id": "0046_sortedcontainers-bisect-left_v4",
         "name": "0046_sortedcontainers-bisect-left_v4",
-        "category": "python-sortedcontainers · PASS",
+        "category": "python-sortedcontainers Â· PASS",
         "repo": "python-sortedcontainers",
         "source": "src/sortedcontainers/sortedlist.py",
         "passed": true,
@@ -44244,7 +44244,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 2 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 2 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -44263,7 +44263,7 @@
       {
         "id": "0047_cachetools-get_v4",
         "name": "0047_cachetools-get_v4",
-        "category": "cachetools · MODEL_LIMITATION",
+        "category": "cachetools Â· MODEL_LIMITATION",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": false,
@@ -44296,7 +44296,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -44315,7 +44315,7 @@
       {
         "id": "0048_cachetools-setdefault_v4",
         "name": "0048_cachetools-setdefault_v4",
-        "category": "cachetools · PASS",
+        "category": "cachetools Â· PASS",
         "repo": "cachetools",
         "source": "src/cachetools/__init__.py",
         "passed": true,
@@ -44350,7 +44350,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -44369,7 +44369,7 @@
       {
         "id": "0049_boltons-first_v4",
         "name": "0049_boltons-first_v4",
-        "category": "boltons · MODEL_LIMITATION",
+        "category": "boltons Â· MODEL_LIMITATION",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": false,
@@ -44402,7 +44402,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 9 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 9 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -44421,7 +44421,7 @@
       {
         "id": "0050_boltons-same_v4",
         "name": "0050_boltons-same_v4",
-        "category": "boltons · PASS",
+        "category": "boltons Â· PASS",
         "repo": "boltons",
         "source": "boltons/iterutils.py",
         "passed": true,
@@ -44456,7 +44456,7 @@
           },
           {
             "step": "model",
-            "status": "ollama / qwen2.5-coder:14b; 4 repair attempt(s)"
+            "status": "local LLM runtime / local 14B code model; 4 repair attempt(s)"
           },
           {
             "step": "governance",
@@ -44483,3 +44483,4 @@
     "llmReport": "evidence/true-llm-report.md"
   }
 }
+

@@ -1,4 +1,4 @@
-# LEONA by DLG Labs: Repair Benchmark Technical Brief
+﻿# LEONA by DLG Labs: Repair Benchmark Technical Brief
 
 ![DLG Labs official logo](../assets/brand/dlg-labs-logo-512.png)
 
@@ -9,6 +9,10 @@ LEONA by DLG Labs completed a controlled 1,000-case deterministic mutation-repla
 LEONA has also added a separate true LLM repair pipeline. That pipeline removes known-answer replay from the repair step, sends pytest telemetry and authorized source context to a model, validates the proposed patch, applies it through the frozen execution chokepoint, reruns pytest, and preserves failures honestly. The latest 50-case adaptive validation run currently shows **23/50 passing true LLM repairs** and **27/50 MODEL_LIMITATION** classifications.
 
 Public contact: [founder@dlglabs.org](mailto:founder@dlglabs.org)
+
+## Public Model Labeling
+
+Public benchmark artifacts use generalized model labels such as `local-14b-code-model`. Exact internal model IDs, provider tuning notes, and private model comparison telemetry remain private unless DLG Labs separately approves their release.
 
 ## Operator Disclosure
 
@@ -47,7 +51,7 @@ The suite covered 30 repair families, including arithmetic guards, statistics ed
 
 - Validation root: `C:\DevNexusTargets\oss-repair-attempts-50-adaptive-true-llm-20260520115521`
 - Provider: `ollama`
-- Model: `qwen2.5-coder:14b`
+- Model: `local-14b-code-model`
 - Cases: **50**
 - Passed: **23/50**
 - Failed: **27/50**
@@ -88,3 +92,4 @@ For deterministic replay:
 For true LLM repair:
 
 > This evaluates actual model-driven repair attempts using pytest telemetry and authorized source context. Successes and failures are preserved honestly.
+

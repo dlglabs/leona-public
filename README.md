@@ -26,8 +26,13 @@ This repository is intentionally a public release surface, not the complete priv
 - Multi-board routing implementation.
 - Repair heuristics and policy tuning.
 - Provider routing and enterprise control paths.
+- Exact internal model IDs and unreleased model-vs-model comparison data.
 - Local write authority and execution chokepoints.
 - Secrets, private configs, and unpublished roadmap controls.
+
+## Public Model Labeling
+
+Public benchmark artifacts use generalized model labels such as `local-14b-code-model`. Exact internal model IDs, provider tuning notes, and private model comparison telemetry remain private unless DLG Labs separately approves their release.
 
 ## Evidence Summary
 
