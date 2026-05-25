@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BULL Repair Portal | Client Dashboard</title>
+  <link rel="stylesheet" href="bull-client-dashboard.css">
+</head>
+<body>
+  <div class="client-app">
+    <aside class="client-sidebar">
+      <div class="client-brand">
+        <img src="assets/bulllogo.png" alt="BULL logo">
+        <div>
+          <strong>BULL Repair Portal</strong>
+          <span>Client Preview</span>
+        </div>
+      </div>
+
+      <nav class="client-nav" aria-label="Client navigation">
+        <button type="button" data-nav="overview"><span>Overview</span></button>
+        <button type="button" data-nav="repairs"><span>Repairs</span></button>
+        <button type="button" data-nav="evidence"><span>Evidence</span></button>
+        <button type="button" data-nav="approvals"><span>Approvals</span></button>
+        <button type="button" data-nav="billing"><span>Value</span></button>
+        <button type="button" data-nav="support"><span>Support</span></button>
+        <button type="button" data-nav="settings"><span>Settings</span></button>
+      </nav>
+
+      <div class="client-card compact">
+        <h3>Preview Status</h3>
+        <p class="status-ok">Sample workspace ready</p>
+        <small>No live customer data</small>
+      </div>
+
+      <div class="client-card compact">
+        <h3>Need Help?</h3>
+        <button class="text-button" type="button" data-action="contact-support">Contact Support</button>
+      </div>
+    </aside>
+
+    <main class="client-main">
+      <header class="client-topbar">
+        <div class="workspace-label">
+          <label>Client Workspace</label>
+          <strong>Acme Corp</strong>
+        </div>
+        <div class="topbar-actions">
+          <select id="dateRange">
+            <option value="7">Last 7 days</option>
+            <option value="30" selected>Last 30 days</option>
+            <option value="90">Last 90 days</option>
+          </select>
+          <button class="button" type="button" id="exportSummary">Export Summary</button>
+          <button class="button primary" type="button" data-action="contact-support">Request Demo</button>
+          <button class="avatar-button" type="button" id="accountMenu">AC</button>
+        </div>
+      </header>
+
+      <section class="client-view" data-view="overview">
+        <div class="section-heading">
+          <div>
+            <h1>Overview</h1>
+            <p>Verified repairs, approvals, evidence, and value delivered for Acme Corp.</p>
+          </div>
+          <span class="safe-pill">Preview with sample data</span>
+        </div>
+
+        <div class="preview-banner">
+          <div>
+            <strong>Interactive product preview</strong>
+            <span>Numbers, repositories, and activity shown here are illustrative and scoped to one client workspace only.</span>
+          </div>
+          <button class="text-button" type="button" data-action="contact-support">Schedule walkthrough</button>
+        </div>
+
+        <div class="metric-row">
+          <article class="metric-card">
+            <small>Fixed and Verified</small>
+            <strong data-field="fixedCount">42</strong>
+            <span class="good" data-field="fixedDelta">+12 this period</span>
+          </article>
+          <article class="metric-card">
+            <small>Pending Review</small>
+            <strong data-field="pendingCount">8</strong>
+            <span class="warn" data-field="pendingDelta">-2 this period</span>
+          </article>
+          <article class="metric-card">
+            <small>Needs Attention</small>
+            <strong data-field="attentionCount">3</strong>
+            <span class="bad" data-field="attentionDelta">+1 this period</span>
+          </article>
+          <article class="metric-card wide">
+            <small>Manual Time Saved</small>
+            <strong data-field="timeSaved">36.7 hrs</strong>
+            <span class="info" data-field="timeDelta">+9.4 hrs this period</span>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <section class="client-panel span-2">
+            <div class="panel-title">
+              <h2>Repair Trend</h2>
+              <button class="text-button" type="button" data-action="view-repairs">View repairs</button>
+            </div>
+            <canvas id="repairTrendChart" width="900" height="260" aria-label="Repair trend"></canvas>
+          </section>
+          <section class="client-panel">
+            <div class="panel-title"><h2>Value Delivered</h2></div>
+            <div class="value-list" id="valueList"></div>
+          </section>
+
+          <section class="client-panel span-2 table-panel">
+            <div class="panel-title">
+              <h2>Recent Repairs</h2>
+              <button class="text-button" type="button" data-action="view-repairs">View all</button>
+            </div>
+            <table>
+              <thead>
+                <tr><th>Repository / Issue</th><th>Status</th><th class="numeric">Files</th><th>Evidence</th><th>Confidence</th><th></th></tr>
+              </thead>
+              <tbody id="recentRepairRows"></tbody>
+            </table>
+          </section>
+          <section class="client-panel">
+            <div class="panel-title"><h2>Trust and Audit</h2></div>
+            <div class="trust-list" id="trustList"></div>
+            <button class="button full" type="button" data-action="view-audit">View Audit Log</button>
+          </section>
+
+          <section class="client-panel span-2">
+            <div class="panel-title">
+              <h2>Recent Activity</h2>
+              <button class="text-button" type="button" data-action="view-activity">View all</button>
+            </div>
+            <div class="activity-list" id="activityList"></div>
+          </section>
+          <section class="client-panel">
+            <div class="panel-title"><h2>System Health</h2><span class="safe-pill">Operational</span></div>
+            <div class="health-list" id="healthList"></div>
+          </section>
+        </div>
+
+        <div class="assurance-strip">
+          <div>
+            <strong>Every repair is verified. Every change is traceable.</strong>
+            <span>Review evidence, approve work, and keep your team in control without seeing internal implementation details.</span>
+          </div>
+          <button class="button" type="button" data-action="view-audit">View sample audit</button>
+        </div>
+      </section>
+
+      <section class="client-view" data-view="repairs">
+        <div class="section-heading"><div><h1>Repairs</h1><p>Sample repair work for Acme Corp only.</p></div></div>
+        <section class="client-panel table-panel">
+          <div class="panel-title">
+            <h2>Repair Queue</h2>
+            <select id="repairFilter"><option value="all">All statuses</option><option value="Fixed">Fixed</option><option value="Pending Review">Pending Review</option><option value="Needs Attention">Needs Attention</option></select>
+          </div>
+          <table>
+            <thead><tr><th>Repository / Issue</th><th>Status</th><th class="numeric">Files</th><th>Evidence</th><th>Confidence</th><th>Action</th></tr></thead>
+            <tbody id="repairRows"></tbody>
+          </table>
+        </section>
+      </section>
+
+      <section class="client-view" data-view="evidence">
+        <div class="section-heading"><div><h1>Evidence</h1><p>Verification summaries and client-safe audit records for this client workspace.</p></div><span class="safe-pill">No private logs</span></div>
+        <div class="content-grid two">
+          <section class="client-panel">
+            <div class="panel-title"><h2>Evidence Packages</h2></div>
+            <div class="evidence-list" id="evidenceList"></div>
+          </section>
+          <section class="client-panel">
+            <div class="panel-title"><h2>Audit Report</h2></div>
+            <pre id="clientReportText">Preparing report...</pre>
+            <div class="button-row">
+              <button class="button" type="button" data-action="copy-report">Copy</button>
+              <button class="button" type="button" data-action="download-report">Download</button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="client-view" data-view="approvals">
+        <div class="section-heading"><div><h1>Approvals</h1><p>Acme Corp repairs waiting for review.</p></div></div>
+        <div class="approval-list" id="approvalList"></div>
+      </section>
+
+      <section class="client-view" data-view="billing">
+        <div class="section-heading"><div><h1>Value</h1><p>Business impact from verified repairs.</p></div></div>
+        <div class="content-grid two">
+          <section class="client-panel">
+            <canvas id="valueChart" width="900" height="260" aria-label="Value chart"></canvas>
+          </section>
+          <section class="client-panel">
+            <div class="value-list" id="billingValueList"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="client-view" data-view="support">
+        <div class="section-heading"><div><h1>Support</h1><p>Questions, review help, and account support.</p></div></div>
+        <section class="client-panel">
+          <div class="support-box">
+            <h2>Schedule a walkthrough</h2>
+            <p>See how a client workspace is configured, what evidence is shared, and how approval flow works.</p>
+            <button class="button primary" type="button" data-action="contact-support">Request Demo</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="client-view" data-view="settings">
+        <div class="section-heading"><div><h1>Settings</h1><p>Workspace preferences for the client portal.</p></div></div>
+        <section class="client-panel">
+          <div class="settings-grid">
+            <label><input type="checkbox" id="emailSummaries" checked> Weekly email summaries</label>
+            <label><input type="checkbox" id="approvalAlerts" checked> Approval reminders</label>
+            <label><input type="checkbox" id="compactClientMode"> Compact layout</label>
+          </div>
+          <button class="button primary" type="button" id="saveClientSettings">Save Settings</button>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div class="client-modal" id="clientModal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="modalTitle">Details</h2>
+        <button class="text-button" type="button" data-action="close-modal">Close</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+  <div class="client-toast" id="clientToast"></div>
+  <script src="bull-client-dashboard.js"></script>
+</body>
+</html>

@@ -12,6 +12,7 @@ This repository is intentionally a public release surface, not the complete priv
 ## What Is Included
 
 - `dashboard/` - static public benchmark dashboard with embedded repair telemetry.
+- `bull/client-preview/` - client-safe BULL repair portal preview with sample data.
 - `benchmark-framework/` - procedurally varied benchmark generator and validator.
 - `telemetry/` - public telemetry field contract and validation notes.
 - `tui/` - lightweight local terminal viewer for benchmark summaries.
@@ -99,6 +100,12 @@ Open the dashboard:
 
 ```powershell
 start .\dashboard\index.html
+```
+
+Open the BULL client preview:
+
+```powershell
+start .\bull\client-preview\index.html
 ```
 
 Validate the bundled evidence:
